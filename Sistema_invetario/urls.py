@@ -16,13 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from login import views
+from login.views import loginRegister
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('login.urls')),  # Incluye las rutas de la app 'login'
-    #path('',views.helloWork), se encuentran en login 
-    #path('about/',views.about)
+    path('login/', include('login.urls')),  # Incluye las rutas de la app 'login'
 
 ]
