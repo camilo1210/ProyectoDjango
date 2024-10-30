@@ -8,9 +8,8 @@ class Project(models.Model):
 
 class Usuario(models.Model):
     nombre = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)  # Asegurarse de que el email sea único
+    email = models.EmailField()
     contraseña = models.CharField(max_length=100)
-
     def __str__(self):
-        return self.nombre  # Método para representar el usuario
+        return self.nombre
 
