@@ -35,3 +35,8 @@ def loginRegister(request):
             messages.success(request, "Registro exitoso. Ahora puedes iniciar sesión.")
             return redirect('login')  # Redirigir al login después del registro
 
+from django.shortcuts import render
+
+def register(request):
+    # Lógica de registro
+    return render(request, 'login/login.html')
