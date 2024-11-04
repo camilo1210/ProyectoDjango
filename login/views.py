@@ -35,3 +35,6 @@ def loginRegister(request):
             messages.success(request, "Registro exitoso. Ahora puedes iniciar sesión.")
             return redirect('login')  # Redirigir al login después del registro
 
+def register(request):
+    # Lógica de registro
+    return render(request, 'login/register.html')
