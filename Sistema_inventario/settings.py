@@ -77,10 +77,15 @@ WSGI_APPLICATION = 'Sistema_inventario.wsgi.application'  # Asegúrate de que el
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
+        'USER': 'root',  # Reemplaza con tu usuario de MySQL
+        'PASSWORD': 'root',  # Reemplaza con tu contraseña de MySQL
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
