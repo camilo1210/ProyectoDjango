@@ -58,6 +58,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
   `usuario` VARCHAR(45) NULL,
   `contrasenaUsuario` VARCHAR(45) NULL,
   `rol` VARCHAR(45) NULL,
+  `correoElectronico` VARCHAR(45) NULL,
   PRIMARY KEY (`idUsuarios`))
 ENGINE = InnoDB;
 
@@ -132,7 +133,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`UsuariosAuditoria` (
   `idUsuario` INT NOT NULL,
   `usuarioAnterior` VARCHAR(45) NULL,
   `contrasenaUsuarioAnterior` VARCHAR(45) NULL,
-  `rolAnterior` VARCHAR(45) NULL,
+  `rol` VARCHAR(45) NULL,
+  `correoElectronico` VARCHAR(45) NULL,
+  `fechaModificacion` DATETIME NULL,
   PRIMARY KEY (`idUsuario`),
   CONSTRAINT `fk_UsuariosAuditoria_1`
     FOREIGN KEY (`idUsuario`)
@@ -167,9 +170,10 @@ CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`Usuarios_BEFORE_UPDATE`
 BEFORE UPDATE ON `Usuarios` FOR EACH ROW
 BEGIN
     -- Aquí va la lógica del trigger
-    INSERT INTO `UsuariosAuditoria` (idUsuario, usuarioAnterior, contrasenaAnterior,fechaModificacion, rolAnterior)
-    VALUES (OLD.idUsuarios, OLD.usuario, OLD.contrasenaUsuario, NOW(), OLD.rol);
+    INSERT INTO `UsuariosAuditoria` (idUsuario, usuarioAnterior, contrasenaAnterior,rol,correoElectronico,fechaModificacion)
+    VALUES (OLD.idUsuarios, OLD.usuario, OLD.contrasenaUsuario, OLD.rol,OLD.correo,NOW());
 END$$
+
 
 DELIMITER ;
 
