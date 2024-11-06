@@ -171,7 +171,6 @@ BEGIN
     VALUES (OLD.idUsuarios, OLD.usuario, OLD.contrasenaUsuario, NOW(), OLD.rol);
 END$$
 
-
 DELIMITER ;
 
 SET SQL_MODE=@OLD_SQL_MODE;
