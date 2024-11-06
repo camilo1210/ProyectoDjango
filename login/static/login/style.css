@@ -11,15 +11,55 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-image: url('./fondo_1.jpeg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
     /*fondo de fondo*/
+}
+#falling-leaves{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Evita que las hojas interrumpan la interacción con otros elementos */
+}
+@keyframes fall {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(var(--horizontal-offset), 100vh); /* La hoja cae hasta el final de la pantalla */
+    }
+}
+
+.leaf {
+    position: absolute;
+    width: 50px; /* Tamaño de la hoja */
+    height: 50px;
+    background-image: url('hoja2.png'); /* Asegúrate de que la URL sea correcta */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear;
+}
+
+
+.leaf {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('hoja2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-timing-function: linear;
 }
 .container{
     width: 800px;
     height: 500px;
     display: flex;
     position: relative;
-    background-color: #1C1C1C;
+    background-position: center;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
@@ -39,12 +79,16 @@ body{
 .container-form h2{
     font-size: 30px;
     margin-bottom: 20px;
-    color: #F0F0F0;
+    color: #B0BEC5;
+    
+    -webkit-text-stroke: 1px black;
+
 }
 .container-form span{
     font-size: 12px;
     margin-bottom: 15px;
-    color: #B0BEC5;
+    color: black;
+    -webkit-text-stroke: 1px #B0BEC5;
 }
 .container-input{
     width: 300px;
@@ -64,12 +108,15 @@ body{
     width: 100%;
     height: 100%;
     background-color: inherit;
+    -webkit-text-stroke: 1px orange;
+
 }
 .container-form a{
         color: #FFA726;
         font-size: 14px;
         margin-bottom: 20px;
         margin-top: 5px;
+        -webkit-text-stroke: 1px black;
 }
 .container-form button{
     width: 170px;
@@ -81,6 +128,7 @@ body{
     margin-top: 10px;
     background-color: #FF6F00;
     color: #F0F0F0;
+    -webkit-text-stroke: 1px black; 
     border: 2px solid #A93226;
     box-shadow: 0px 4px 8px rgba(169, 50, 38, 0.5);
 }
@@ -106,15 +154,17 @@ body{
     display: flex;
     align-items: center;
     transform: translateX(100%);
-    background-color: #34495E;
     transition: transform 0.5s ease-in-out, radius 0.5s ease-in-out;
     overflow: hidden;
-    border-radius: 50% 0 0 50%;
+    border-radius: 50% 50% 50% 50%;
+    background-position: center;
+    background-color: #F0F0F0;
+    opacity: 0.8;
 }
 .container.toggle .container-welcome{
     transform: translateX(0);
-    border-radius: 0 50% 50% 0;
-    background-color: #741dc5;
+    border-radius: 50% 50% 50% 50%;
+    background-position: center;
 }
 .container-welcome .welcome{
     position: absolute;
@@ -123,7 +173,7 @@ body{
     align-items: center;
     gap: 20px;
     padding: 0 50px;
-    color: #F0F0F0;
+    color: #f0f0f0;
     transition: transform 0.5s ease-in-out;
 
 }
@@ -132,14 +182,34 @@ body{
 }
 .container-welcome h3{
     font-size: 40px;
+    color: black;
+    -webkit-text-stroke: 1px orange;
+    margin-bottom: 30px;
 }
 .container-welcome p{
     font-size: 14px;
     text-align: center;
+    color: #B0BEC5;
+    -webkit-text-stroke: 1px black;
 }
 .container-welcome .button{
-    border: 2px solid white;
-    background-color: transparent;
+    width: 170px;
+    height: 45px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #FF6F00;
+    color: #F0F0F0;
+    -webkit-text-stroke: 1px black; 
+    border: 2px solid #A93226;
+    box-shadow: 0px 4px 8px rgba(169, 50, 38, 0.5);
+    margin-top: 30px;
+}
+.container-welcome .button:hover{
+    background-color: #E65100; /* Fondo naranja oscuro para hover */
+    box-shadow: 0px 6px 12px rgba(169, 50, 38, 0.7); /* Sombra más intensa en hover */
 }
 .container.toggle .welcome-sign-in{
     transform: translateX(0);
