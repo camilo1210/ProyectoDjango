@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
         'USER': 'root',  # Reemplaza con tu usuario de MySQL
-        'PASSWORD': '1210',  # Reemplaza con tu contraseña de MySQL
+        'PASSWORD': '452678',  # Reemplaza con tu contraseña de MySQL
         'HOST': 'localhost',
         'PORT': '3306',
     }

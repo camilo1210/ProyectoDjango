@@ -30,7 +30,7 @@
         </div>
 
         <div class="container-form">
-            <form class="sign-up" method="POST" action="{% url 'register' %}"> <!-- Cambia 'register' por el nombre de tu vista de registro -->
+            <form class="sign-up" method="POST" action="{% url 'login' %}"> <!-- Cambia 'register' por el nombre de tu vista de registro -->
                 {% csrf_token %}
                 <h2>REGISTRARSE</h2>
                 <span>USE SU CORREO ELECTRONICO PARA REGISTRARSE</span>
