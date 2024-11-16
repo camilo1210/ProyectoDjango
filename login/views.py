@@ -33,9 +33,10 @@ def loginRegister(request):
         elif request.POST.get('action') == 'sign-up':  # Manejo de registro
             name = request.POST['name']
             email = request.POST['email']
+            rol = request.POST.get('rol', 'Trabajador')
             password = request.POST['password']
             if not LoginUsuario.objects.filter(email=email).exists():  # Evita duplicados
-                user = LoginUsuario(nombre=name, email=email, contraseña=password)
+                user = LoginUsuario(usuario=name, email=email, rol = rol,contraseña=password)
                 user.save()
                 messages.success(request, "Registro exitoso. Ahora puedes iniciar sesión.")
                 return redirect('login')  # Redirigir al login después del registro
