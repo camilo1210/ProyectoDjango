@@ -1,21 +1,4 @@
-<form class="sign-up" method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    <h2>REGISTRARSE</h2>
-    <span>USE SU CORREO ELECTRONICO PARA REGISTRARSE</span>
-    <div class="container-input">
-        <ion-icon name="person-outline"></ion-icon>
-        <input type="text" name="name" placeholder="NOMBRE DE USUARIO" required>
-    </div>
-    <div class="container-input">
-        <ion-icon name="mail-outline"></ion-icon>
-        <input type="email" name="email" placeholder="EMAIL" required>
-    </div>
-    <div class="container-input">
-        <ion-icon name="lock-closed-outline"></ion-icon>
-        <input type="password" name="password" placeholder="CONTRASEÑA" required>
-    </div>
-    <button class="button" type="submit" name="action" value="sign-up">REGISTRARSE</button>
-</form>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,21 +33,21 @@
         </div>
 
         <div class="container-form">
-            <form class="sign-up" method="POST" action="{% url 'login' %}"> <!-- Cambia 'register' por el nombre de tu vista de registro -->
+            <form class="sign-up" method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 <h2>REGISTRARSE</h2>
                 <span>USE SU CORREO ELECTRONICO PARA REGISTRARSE</span>
                 <div class="container-input">
                     <ion-icon name="person-outline"></ion-icon>
-                    <input type="text" name="name" placeholder="NOMBRE" required> <!-- Asegúrate de que el name sea correcto -->
+                    <input type="text" name="name" placeholder="NOMBRE DE USUARIO" required>
                 </div>
                 <div class="container-input">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="text" name="email" placeholder="EMAIL" required> <!-- Asegúrate de que el name sea correcto -->
+                    <input type="email" name="email" placeholder="EMAIL" required>
                 </div>
                 <div class="container-input">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" name="password" placeholder="CONTRASEÑA" required> <!-- Asegúrate de que el name sea correcto -->
+                    <input type="password" name="password" placeholder="CONTRASEÑA" required>
                 </div>
                 <button class="button" type="submit" name="action" value="sign-up">REGISTRARSE</button>
             </form>
