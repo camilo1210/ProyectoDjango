@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'inventario',
     'login',  # Asegúrate de que el nombre de tu app esté correcto aquí
 ]
 
