@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inventario',
     'login',  # Asegúrate de que el nombre de tu app esté correcto aquí
+    'adminUsuarios'
 ]
 
 MIDDLEWARE = [
@@ -56,8 +59,8 @@ ROOT_URLCONF = 'Sistema_inventario.urls'  # Asegúrate de que el nombre esté co
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],  # Si tienes una carpeta global 'templates' a nivel de proyecto, agrega su ruta aquí
-        'APP_DIRS': True,  # Esto permite buscar plantillas dentro de las apps
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Esto le dice a Django que busque plantillas en la carpeta global 'templates'
+        'APP_DIRS': True,#Django busque plantillas dentro de las aplicaciones (en 'app/templates/')
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -68,6 +71,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'Sistema_inventario.wsgi.application'  # Asegúrate de que el nombre esté correcto aquí
