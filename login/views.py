@@ -65,4 +65,4 @@ def adminUsuarios(request):
     return render(request, 'adminUsuarios/admin_user.html')  # Ruta al HTML de adminUsuarios
 
 def home(request):
-    return render(request, 'home/home.html')  # Ruta al HTML de home
+    return render(request, 'inventario/inventario.html')  # Ruta al HTML de home
