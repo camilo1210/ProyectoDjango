@@ -25,7 +25,7 @@ def loginRegister(request):
                     return redirect('/adminUsuarios/')  # Redirigir al admin
                 elif user.first_name == 'Usuario':
                     login(request, user)
-                    return redirect('/home/')  # Redirigir al home del usuario
+                    return redirect('inventario:home')  # Redirigir al home del usuario
                 else:
                     messages.error(request, 'El usuario no tiene un rol válido asignado.')
             else:

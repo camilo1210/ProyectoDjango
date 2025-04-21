@@ -21,6 +21,7 @@ from login import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', include('login.urls')),  # Incluye las rutas de la app 'login'
     path('', include('login.urls')),  # Incluye las rutas de la app 'login'
     path('adminUsuarios/', include('adminUsuarios.urls')),  # Incluye las rutas de la app 'adminUsuarios'
 
