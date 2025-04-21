@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Inventario</title>
+	<title>Registro Salida</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="/css/main.css">
@@ -138,7 +138,7 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles"><i class="zmdi zmdi-archive zmdi-hc-fw"></i> INVENTARIO <small>Registro y existencias</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i> REGISTRAR SALIDA <small>Registro y existencias</small></h1>
 			</div>
 		</div>
 		<div class="container-fluid"> 
@@ -168,10 +168,12 @@
 							<hr class="linea-filtro">
 							<div class="contenido-filtro-categorias">
 								<h3>Categorias</h3>
-								<input type="checkbox" name="categoria"value="lacteos"> Lacteos
-								<input type="checkbox" name="categoria"value="encurtidos">Encurtidos
-								<input type="checkbox" name="categoria"value="vegetales"> Vegetales
-
+								<input type="checkbox" name="opcion1" value="valor1">
+								Lacteos
+								<input type="checkbox" name="opcion1" value="valor1">
+								Encurtidos
+								<input type="checkbox" name="opcion1" value="valor1">
+								Vegetales
 							</div>
 							<hr class="linea-filtro">
 							<div class="contenido-filtro-categorias">
@@ -185,10 +187,7 @@
 							</div>
 							<hr class="linea-filtro">
 							<div class="contenido-filtro-categorias">
-								<h3> AGREGAR FILTRO 
-									<button class="btn-close"><i class="zmdi zmdi-close"></i></button> 
-									<button class="btn-check"><i class="zmdi zmdi-check"></i></button>
-								</h3>
+								<h3> AGREGAR FILTRO <i class="zmdi zmdi-close"></i> <i class="zmdi zmdi-check"></i></h3> 
 							</div>
 						</form>
 					</div>
@@ -258,9 +257,9 @@
 											<td>Lácteos Gourmet</td>
 											<td>20</td>
 											<td>10 kg</td>
-											<td>Panadería Real</td> <!-- Marca -->
-											<td>01/10/2024</td> <!-- Fecha llegada -->
-											<td>15/01/2025</td> <!-- Fecha vencimiento -->
+											<td>01/10/1993</td>
+											<td>15/112024</td>
+											<td>15/01/2025</td>
 											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
 											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
 										</tr>
@@ -276,7 +275,7 @@
 								  	<li><a href="#!">»</a></li>
 								</ul>
 								<div class="boton-general">
-									<a href="/html/registrar_salida.html"><button class="btn-registrar-prov">Registrar Salida</button></a>
+									<a href="#!"><button class="btn-registrar-prov">Registrar</button></a>
 								</div>
 							</div>
 					  	</div>
