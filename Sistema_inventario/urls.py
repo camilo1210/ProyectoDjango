@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', include('login.urls')),  # Incluye las rutas de la app 'login'
     path('', include('login.urls')),  # Incluye las rutas de la app 'login'
-    path('adminUsuarios/', include('adminUsuarios.urls')),  # Incluye las rutas de la app 'adminUsuarios'
+    path('adminUsuarios/', include('adminUsuarios.urls')),  # Incluye las rutas de la ap  'adminUsuarios'
+    path('inventario/', include('inventario.urls')),  # Incluye las rutas de la app 'inventario'
 
 ]
