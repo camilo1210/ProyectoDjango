@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from login import views
+
 
 
 urlpatterns = [
@@ -37,4 +37,5 @@ urlpatterns = [
     path('reporte_stock/', include('reporte_stock.urls')),
     path('reporte_tende/', include('reporte_tende.urls')),
     path('reporte_ventas/', include('reporte_ventas.urls')),
+    path('materia/', include('registrarMateria.urls')),
 ]
