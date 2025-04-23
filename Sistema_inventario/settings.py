@@ -40,8 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inventario',
-    'login',  # Asegúrate de que el nombre de tu app esté correcto aquí
-    'adminUsuarios'
+    'login',  
+    'adminUsuarios',
+    'configuracion',
+    'modificar_reportes',
+    'perfil',
+    'registrar_prov',
+    'registrar_salida',
+    'reporte_caduci',
+    'reporte_compra',
+    'reporte_inven',
+    'reporte_provee',
+    'reporte_stock',
+    'reporte_tende',
+    'reporte_ventas',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +97,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
         'USER': 'root',  # Reemplaza con tu usuario de MySQL
-        'PASSWORD': '452678',  # Reemplaza con tu contraseña de MySQL
+        'PASSWORD': 'anca',  # Reemplaza con tu contraseña de MySQL
         'HOST': 'localhost',
         'PORT': '3306',
     }

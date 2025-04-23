@@ -8,9 +8,8 @@ from adminUsuarios.views import admin
 
 urlpatterns = [
     path('', views.loginRegister, name='login'),  # Ruta para login
-    path('home/', home, name='home'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 
-    
+
 ]
 
