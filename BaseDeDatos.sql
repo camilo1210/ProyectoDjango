@@ -146,37 +146,3 @@ ENGINE = InnoDB;
 
 USE `mydb`;
 
-DELIMITER $$
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`Proveedor_BEFORE_UPDATE`
-BEFORE UPDATE ON `Proveedor` FOR EACH ROW
-BEGIN
-    -- Aquí va la lógica del trigger
-    INSERT INTO `Proveedor_Auditoria` (idProveedorAuditoria, nombreAnterior, direccionAnterior, telefonoAnterior, fechaModificacion)
-    VALUES (OLD.idProvedor, OLD.nombreProvedor, OLD.direccion, OLD.telefono, NOW());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`MateriaPrima_BEFORE_UPDATE`
-BEFORE UPDATE ON `MateriaPrima` FOR EACH ROW
-BEGIN
-    -- Aquí va la lógica del trigger
-    INSERT INTO `MateriaPrimaAuditoria` (idMateriaPrima, nombreMateriaPrimaAnterior, costoAnterior, cantidadAnterior, unidadMedidaAnterior, categoriaAnterior,marcaAnterior,fechaLlegadaAnterior,fechaVencimientoAnterior,fechaModificacion )
-    VALUES (OLD.idMateriaPrima, OLD.nombreMateriaPrima, OLD.costo, OLD.proveedor, OLD.cantidad, OLD.unidadMedida, OLD.categoria, OLD.marca, OLD.fechaLlegada, OLD.fechaVencimiento ,NOW());
-END$$
-
-USE `mydb`$$
-CREATE DEFINER = CURRENT_USER TRIGGER `mydb`.`Usuarios_BEFORE_UPDATE`
-BEFORE UPDATE ON `Usuarios` FOR EACH ROW
-BEGIN
-    -- Aquí va la lógica del trigger
-    INSERT INTO `UsuariosAuditoria` (idUsuario, usuarioAnterior, contrasenaAnterior,rol,correoElectronico,fechaModificacion)
-    VALUES (OLD.idUsuarios, OLD.usuario, OLD.contrasenaUsuario, OLD.rol,OLD.correo,NOW());
-END$$
-
-
-DELIMITER ;
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
