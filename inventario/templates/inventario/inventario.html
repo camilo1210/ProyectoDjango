@@ -26,7 +26,7 @@
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
-						<a href="{%static '/html/configuraciones.html' %}">
+						<a href="{%static 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
 						</a>
 					</li>
@@ -103,7 +103,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="{%static 'html/configuraciones.html' %}">
+					<a href="{% url 'configuracion' %}">
 						<i class="zmdi zmdi-settings zmdi-hc-fw"></i> CONFIGURACIONES
 					</a>
 				</li>
@@ -382,13 +382,14 @@
 	</div>
 	</div>
 	<!--====== Scripts -->
-	<script src="/script/jquery-3.1.1.min.js"></script>
-	<script src="/script/bootstrap.min.js"></script>
-	<script src="/script/material.min.js"></script>
-	<script src="/script/ripples.min.js"></script>
-	<script src="/script/sweetalert2.min.js"></script>
-	<script src="/script/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/script/main.js"></script>
+	{% load static %}
+	<script src="{% static 'script/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'script/bootstrap.min.js' %}"></script>
+	<script src="{% static 'script/material.min.js'	 %}"></script>
+	<script src="{% static 'script/ripples.min.js' %}"></script>
+	<script src="{% static 'script/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'script/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'script/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>

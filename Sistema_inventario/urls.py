@@ -25,5 +25,7 @@ urlpatterns = [
     path('', include('login.urls')),  # Incluye las rutas de la app 'login'
     path('adminUsuarios/', include('adminUsuarios.urls')),  # Incluye las rutas de la ap  'adminUsuarios'
     path('inventario/', include('inventario.urls')),  # Incluye las rutas de la app 'inventario'
+    path('configuracion/', include('configuracion.urls')),  # Incluye las rutas de la app 'configuracion'
+    path('modificar_reportes/', include('modificar_reportes.urls')),
 
 ]

@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'inventario',
-    'login',  # Asegúrate de que el nombre de tu app esté correcto aquí
-    'adminUsuarios'
+    'login',  
+    'adminUsuarios',
+    'configuracion',
+    'modificar_reportes',
 ]
 
 MIDDLEWARE = [
