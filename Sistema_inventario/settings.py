@@ -44,6 +44,16 @@ INSTALLED_APPS = [
     'adminUsuarios',
     'configuracion',
     'modificar_reportes',
+    'perfil',
+    'registrar_prov',
+    'registrar_salida',
+    'reporte_caduci',
+    'reporte_compra',
+    'reporte_inven',
+    'reporte_provee',
+    'reporte_stock',
+    'reporte_tende',
+    'reporte_ventas',
 ]
 
 MIDDLEWARE = [
