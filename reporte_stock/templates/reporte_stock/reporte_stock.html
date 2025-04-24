@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<title>School</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
 <body>
 	<!-- SideBar -->
@@ -18,14 +20,14 @@
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
-					<img src="/imagenes/icons/logo_navidad.png" alt="UserIcon">
+					<img src="{%static '/imagenes/icons/logo_navidad.png' %}" alt="UserIcon">
 					<figcaption class="text-center text-titles">Andrés</figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
-						<a href="/html/configuraciones.html">
+						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
-						</a>
+						 </a>
 					</li>
 					<li>
 						<a href="#!" class="btn-exit-system">
@@ -37,8 +39,8 @@
 			<!-- SideBar Menu -->
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
-					<a href="/html/add_materia.html">
-						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA <!--ESTE ES UN ICONO-->
+					<a href="{% url 'agregar_materia' %}">
+						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA  <!--ESTE ES UN ICONO-->
 					</a>
 				</li>
 				<li>
@@ -47,10 +49,10 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="/html/inventario.html"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
+							<a href="#!"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
 						</li>
 						<li>
-							<a href="/html/registrar_salida.html"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
+							<a href="{% url 'registrar_salida' %}"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
 						</li>
 					</ul>
 				</li>
@@ -61,28 +63,28 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="/html/reporte_ventas.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
+							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
 						</li>
 						<li>
-							<a href="/html/reporte_inven.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
+							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
 						</li>
 						<li>
-							<a href="/html/reporte_stock.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
+							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
 						</li>
 						<li>
-							<a href="/html/reporte_caduci.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
+							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
 						</li>
 						<li>
-							<a href="/html/reporte_provee.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
+							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
 						</li>
 						<li>
-							<a href="/html/reporte_tende.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
+							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
 						</li>
 						<li>
-							<a href="/html/reporte_tende.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
+							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
 						</li>
 						<li>
-							<a href="/html/modificar_report.html"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
+							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
 						</li>
 					</ul>
 				</li>
@@ -92,15 +94,15 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="/html/perfil.html"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
+							<a href="{% url 'perfil' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
 						</li>
 						<li>
-							<a href="/html/admin_user.html"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
+							<a href="{% url 'admin' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="/html/configuraciones.html">
+					<a href="{% url 'configuracion' %}">
 						<i class="zmdi zmdi-settings zmdi-hc-fw"></i> CONFIGURACIONES
 					</a>
 				</li>
@@ -422,101 +424,101 @@
 				NOTIFICACIONES <i class="zmdi zmdi-close btn-Notifications-area"></i>
 			</div>
 			<div class="list-group">
-			  	<div class="list-group-item">
+			<div class="list-group-item">
 				    <div class="row-action-primary">
-				      	<img src="/imagenes/img/andres.jpg" alt="" class="notificaciones">
+				    <img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
-				      	<div class="least-content">5 m</div>
-				      	<h4 class="list-group-item-heading">Entrada de producto</h4>
-				      	<p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han sido añadidas correctamente.</p>
+				    <div class="least-content">5 m</div>
+				    <h4 class="list-group-item-heading">Entrada de producto</h4>
+				    <p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han sido añadidas correctamente.</p>
 				    </div>
-			  	</div>
-			  	<div class="list-group-separator"></div>
-			  	<div class="list-group-item">
+			</div>
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/Asta.jpeg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/Asta.jpeg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
-				      	<div class="least-content">15m</div>
-				      	<h4 class="list-group-item-heading">Salida de productos</h4>
-				      	<p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido retiradas del inventario.</p>
-				    </div>
-			  	</div>
-			  	<div class="list-group-separator"></div>
+				    <div class="least-content">15m</div>
+				    <h4 class="list-group-item-heading">Salida de productos</h4>
+				    <p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido retiradas del inventario.</p>
+				</div>
+			</div>
+			<div class="list-group-separator"></div>
 				<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/dva.jpeg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/dva.jpeg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
-				      	<div class="least-content">25m</div>
-				      	<h4 class="list-group-item-heading">Bajo stock</h4>
-				      	<p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30 Realice un pedido pronto</p>
+				    <div class="least-content">25m</div>
+				    <h4 class="list-group-item-heading">Bajo stock</h4>
+				    <p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30 Realice un pedido pronto</p>
 				    </div>
 				</div>
-			  	<div class="list-group-separator"></div>
-			  	<div class="list-group-item">
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/andres.jpg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/andres.jpg' %}"alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
-				      	<div class="least-content">5h</div>
-				      	<h4 class="list-group-item-heading">Actualización de inventario</h4>
-				      	<p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido ajustada correctamente.</p>
+				    <div class="least-content">5h</div>
+				    <h4 class="list-group-item-heading">Actualización de inventario</h4>
+				    <p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido ajustada correctamente.</p>
 				    </div>
-			  	</div>
-				<div class="list-group-separator"></div>
-			  	<div class="list-group-item">
+			</div>
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
 				    <div class="row-action-primary">
 						<i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>
 				    </div>
 				    <div class="row-content">
-				      	<div class="least-content">7h</div>
-				      	<h4 class="list-group-item-heading">Caducidad de productos</h4>
-				      	<p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca de su fecha de expiración.</p>
+				    <div class="least-content">7h</div>
+				    <h4 class="list-group-item-heading">Caducidad de productos</h4>
+				    <p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca de su fecha de expiración.</p>
 				    </div>
-			  	</div>
 			</div>
-
+			</div>
 		</div>
 	</section>
 
 	<!-- Dialog help -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="Dialog-Help">
-	  	<div class="modal-dialog" role="document">
-		    <div class="modal-content">
-			    <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    	<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
-			    </div>
-			    <div class="modal-body">
-				<p>
-					Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de "Pan y Arte". 
-					Aquí encontrarás información para resolver tus dudas rápidamente.
-				</p>
-				<dl>
-					<dt>Correo electrónico:</dt>
-					<dd>andres.camilo.fernandez@correounivalle.edu.co</dd>
-					<dt>Teléfono:</dt>
-					<dd>662 482918</dd>
-					</dl>
-				</div>
-		      	<div class="modal-footer">
-		        	<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> Ok</button>
-		      	</div>
-		    </div>
-	  	</div>
+		<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
+					</div>
+					<div class="modal-body">
+					<p>
+						Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de "Pan y Arte". 
+						Aquí encontrarás información para resolver tus dudas rápidamente.
+					</p>
+					<dl>
+						<dt>Correo electrónico:</dt>
+						<dd>andres.camilo.fernandez@correounivalle.edu.co</dd>
+						<dt>Teléfono:</dt>
+						<dd>662 482918</dd>
+						</dl>
+					</div>
+			<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> Ok</button>
+			</div>
+			</div>
+		</div>
 	</div>
 	<!--====== Scripts -->
-	<script src="/script/jquery-3.1.1.min.js"></script>
-	<script src="/script/bootstrap.min.js"></script>
-	<script src="/script/material.min.js"></script>
-	<script src="/script/ripples.min.js"></script>
-	<script src="/script/sweetalert2.min.js"></script>
-	<script src="/script/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/script/main.js"></script>
+	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/material.min.js'	 %}"></script>
+	<script src="{% static 'scripts/ripples.min.js' %}"></script>
+	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'scripts/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
+	{% load static %}
 </body>
 </html>

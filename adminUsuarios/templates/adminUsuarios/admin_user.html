@@ -1,230 +1,28 @@
+{% load static %}	
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Admin-user</title>
-        {% load static %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-        <link rel="stylesheet" href="{% static 'css/style-admin-user.css' %}">
-        <link rel="icon" href="{% static 'imagenes/admin_user.ico' %}" type="image/x-icon">
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-user</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+    <link rel="stylesheet" href="{% static 'css/style-admin-user.css' %}">
+    <link rel="icon" href="{% static 'imagenes/img/icono.ico' %}" type="image/x-icon">
+</head>
 <body>
-    <div class="swiper mySwiper">
-
+    <div  class="swiper mySwiper">
         <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>ANDRES</span>
-                        <h3>ADMINISTRADOR</h3>
-                        <p>
-                            Lorem HOLA!.
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/andres.jpg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>LUCAS</span>
-                        <h3>CHEF</h3>
-                        <p>
-                            Lorem HOLA!!.
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/Asta.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>SARA</span>
-                        <h3>CAJERA</h3>
-                        <p>
-                            Lorem HOLA!!.
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/dva.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>PACO</span>
-                        <h3>ASEADOR</h3>
-                        <p>
-                            Lorem HOLA!!.
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/andres.jpg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>    
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>CAMILO</span>
-                        <h3>SUB CHEF</h3>
-                        <p>
-                            Lorem HOLA!!
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/Asta.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>XIMENA</span>
-                        <h3>CONTADORA</h3>
-                        <p>
-                            Lorem HOLA!!
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/dva.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>ALVARO</span>
-                        <h3>PASTELERO</h3>
-                        <p>
-                            Lorem HOLA!!
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/andres.jpg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>LORENZO</span>
-                        <h3>PANADERO</h3>
-                        <p>
-                            Lorem HOLA!!
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/Asta.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="icons">
-                    <i  class="fa-solid fa-circle-arrow-left"></i>
-                    <img src="{% static 'adminUsuarios/static/adminUsuarios/icono.ico' %}" alt="">
-                    <i class="fa-solid fa-pencil"></i>
-                </div>
-                <div class="product-content">
-                    <div class="product-txt">
-                        <span>MARIA</span>
-                        <h3>ASEADORA</h3>
-                        <p>
-                            Lorem HOLA!!
-                        </p>
-                    </div>
-                    <div class="product-img">
-                        <img src="{% static 'adminUsuarios/static/adminUsuarios/dva.jpeg' %}" alt="">
-                    </div>
-                </div>
-                <a href="#" class="btn-1">INICIAR SESION</a>
-            </div>
 
         </div>
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper (".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop:true,
-            coverflowEffect: {
-                depth:500,
-                modifer:1,
-                slidesShadows:true,
-                rotate:0,
-                stretch:0
-            }
-        })
-    </script>
+    <script src="{% static 'scripts/script-admin-user.js' %}"></script>
+{% load static %}	
+
 </body>
 </html>
