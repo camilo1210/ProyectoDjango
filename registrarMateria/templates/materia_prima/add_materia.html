@@ -138,7 +138,7 @@
 			</ul>
 		</nav>
 		<!-- Content page -->
-		<form method="POST">
+		<form method="POST" action="{% url 'agregar_materia' %}">
 			{% csrf_token %}
 			<div class="container-fluid">
 			  <div class="page-header">
@@ -149,7 +149,7 @@
 			<div class="inventario">
 			  <div class="inventario-block">
 				<label for="materia-prima">NOMBRE DE LA MATERIA PRIMA</label>
-				<input type="text" id="materia-prima" name="nombremateriapri" required>
+				<input type="text" id="materia-prima" name="nombreMateriaPrima" required>
 			  </div>
 		  
 			  <div class="inventario-block">
@@ -169,7 +169,7 @@
 		  
 			  <div class="inventario-block">
 				<label for="unidad-medida">UNIDAD DE MEDIDA</label>
-				<input type="text" id="unidad-medida" name="unidadmedida" required>
+				<input type="text" id="unidad-medida" name="unidadMedida" required>
 			  </div>
 		  
 			  <div class="inventario-block">
@@ -184,12 +184,12 @@
 		  
 			  <div class="inventario-block">
 				<label for="fecha-llegada">FECHA DE LLEGADA</label>
-				<input type="datetime-local" id="fecha-llegada" name="fechallegada" required>
+				<input type="datetime-local" id="fecha-llegada" name="fechaLlegada" required>
 			  </div>
 		  
 			  <div class="inventario-block">
 				<label for="fecha-vencimiento">FECHA DE VENCIMIENTO</label>
-				<input type="datetime-local" id="fecha-vencimiento" name="fechavencimiento" required>
+				<input type="datetime-local" id="fecha-vencimiento" name="fechaVencimiento" required>
 			  </div>
 			</div>
 		  

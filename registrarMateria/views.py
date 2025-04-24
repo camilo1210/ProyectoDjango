@@ -2,36 +2,46 @@
 from django.shortcuts import render, redirect
 from django.utils.dateparse import parse_datetime
 from .models import MateriaPrima
+from registrar_prov.models import Proveedores
 
 
 def vista_add_materia(request):
     return render(request, 'materia_prima/add_materia.html')
 
+
 def agregar_materia(request):
     if request.method == 'POST':
-        nombre = request.POST.get('nombremateriapri')
+        nombre = request.POST.get('nombreMateriaPrima')
         costo = request.POST.get('costo')
-        proveedor = request.POST.get('proveedor')
+        proveedor_id = request.POST.get('proveedor')  # De aquí obtienes el ID
         cantidad = request.POST.get('cantidad')
-        unidad = request.POST.get('unidadmedida')
+        unidad = request.POST.get('unidadMedida')
         categoria = request.POST.get('categoria')
         marca = request.POST.get('marca')
-        fecha_llegada = parse_datetime(request.POST.get('fechallegada'))
-        fecha_vencimiento = parse_datetime(request.POST.get('fechavencimiento'))
+        fecha_llegada = parse_datetime(request.POST.get('fechaLlegada'))
+        fecha_vencimiento = parse_datetime(request.POST.get('fechaVencimiento'))
 
-        materia = MateriaPrima(
-            nombremateriapri=nombre,
-            costo=costo,
-            proveedor=proveedor,
-            cantidad=cantidad,
-            unidadmedida=unidad,
-            categoria=categoria,
-            marca=marca,
-            fechallegada=fecha_llegada,
-            fechavencimiento=fecha_vencimiento
-        )
-        materia.save()
-        return redirect('agregar_materia')  # o redirige a una lista, como 'lista_materias'
+        try:
+            proveedor = Proveedores.objects.get(id=int(proveedor_id))  # Obtener instancia
 
-    return render(request, 'agregar_materia.html')
+            materia = MateriaPrima(
+                nombreMateriaPrima=nombre,
+                costo=int(costo),
+                proveedor=proveedor,  # Pasas el objeto, no el ID
+                cantidad=int(cantidad),
+                unidadMedida=unidad,
+                categoria=categoria,
+                marca=marca,
+                fechaLlegada=fecha_llegada,
+                fechaVencimiento=fecha_vencimiento
+            )      
+            materia.save()
+            print("✅ Guardado con éxito:", materia)
+            return redirect('agregar_materia')
 
+        except Proveedores.DoesNotExist:
+            print("❌ El proveedor no existe.")
+        except Exception as e:
+            print("❌ Error al guardar:", e)
+
+    return render(request, 'materia_prima/add_materia.html')
