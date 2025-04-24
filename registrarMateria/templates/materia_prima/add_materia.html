@@ -138,59 +138,67 @@
 			</ul>
 		</nav>
 		<!-- Content page -->
-		<div class="container-fluid">
-			<div class="page-header">
-			  <h1 class="text-titles">AGREGAR MATERIA PRIMA</h1>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="container-fluid">
+			  <div class="page-header">
+				<h1 class="text-titles">AGREGAR MATERIA PRIMA</h1>
+			  </div>
 			</div>
-		</div>
-		<!--ESTA ES LA PARTE DEL CUADRO DE-->
-		<div class="inventario">
-			<div class="inventario-block">
+		  
+			<div class="inventario">
+			  <div class="inventario-block">
 				<label for="materia-prima">NOMBRE DE LA MATERIA PRIMA</label>
-				<input type="text" id="materia-prima" name="materia-prima">
-			</div>
-
-			<div class="inventario-block">
+				<input type="text" id="materia-prima" name="nombremateriapri" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="costo">COSTO</label>
-				<input type="text" id="costo" name="costo">
-			</div>
-			
-			<div class="inventario-block">
-				<label for="proveedor">PROVEEDOR</label>
-				<input type="text" id="proveedor" name="proveedor">
-			</div>
-
-			<div class="inventario-block">
+				<input type="number" id="costo" name="costo" required>
+			  </div>
+		  
+			  <div class="inventario-block">
+				<label for="proveedor">PROVEEDOR (ID)</label>
+				<input type="number" id="proveedor" name="proveedor" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="cantidad">CANTIDAD</label>
-				<input type="text" id="cantidad" name="cantidad">
-			</div>
-
-			<div class="inventario-block">
+				<input type="number" id="cantidad" name="cantidad" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="unidad-medida">UNIDAD DE MEDIDA</label>
-				<input type="text" id="unidad-medida" name="unidad-medida">
-			</div>
-
-			<div class="inventario-block">
+				<input type="text" id="unidad-medida" name="unidadmedida" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="categoria">CATEGORIA</label>
-				<input type="text" id="categoria" name="categoria">
-			</div>
-
-			<div class="inventario-block">
+				<input type="text" id="categoria" name="categoria" required>
+			  </div>
+		  
+			  <div class="inventario-block">
+				<label for="marca">MARCA</label>
+				<input type="text" id="marca" name="marca" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="fecha-llegada">FECHA DE LLEGADA</label>
-				<input type="text" id="fecha-llegada" name="fecha-llegada">
-			</div>
-			
-			<div class="inventario-block">
+				<input type="datetime-local" id="fecha-llegada" name="fechallegada" required>
+			  </div>
+		  
+			  <div class="inventario-block">
 				<label for="fecha-vencimiento">FECHA DE VENCIMIENTO</label>
-				<input type="text" id="fecha-vencimiento" name="fecha-vencimiento">
+				<input type="datetime-local" id="fecha-vencimiento" name="fechavencimiento" required>
+			  </div>
 			</div>
-		</div>
-		<div class="externo-button">
-			<button class="btn-guardar">GUARDAR</button>
-		</div>
-		<div class="externo-button">
-			<button class="btn-registrar">REGISTRAR</button>
-		</div>
+		  
+			<div class="externo-button">
+			  <button type="submit" class="btn-guardar">GUARDAR</button>
+			</div>
+		  </form>
+		  
+		  
 		<div class="externo-button">
 			<a href="/html/registrar_prov.html"><button class="btn-registrar-prov">REGISTRAR PROVEEDORES</button></a>
 		</div>

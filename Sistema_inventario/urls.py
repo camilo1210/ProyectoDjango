@@ -38,4 +38,5 @@ urlpatterns = [
     path('reporte_tende/', include('reporte_tende.urls')),
     path('reporte_ventas/', include('reporte_ventas.urls')),
     path('materia/', include('registrarMateria.urls')),
+    path('inventario/', include('inventario.urls', namespace='inventario')),
 ]
