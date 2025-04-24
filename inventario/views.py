@@ -9,3 +9,6 @@ def configuracion(request):
 
 def vista_add_materia(request):
     return render(request, 'materia_prima/add_materia.html')
+
+def Inventario(request):
+    return render(request, 'inventario/inventario.html')  # Ruta al HTML de Inventario

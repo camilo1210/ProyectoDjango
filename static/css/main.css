@@ -92,7 +92,7 @@ body, html{
 .dashboard-sideBar{
 	left: 0;
 	z-index: 2;
-	background-image: url('/imagenes/img/fondo_navidad.jpeg');
+	background-image: url('/static/imagenes/img/fondo_navidad.jpeg');
 	border-right: 1px solid rgba(255, 255, 255, .4);
 	overflow: hidden;
 }
@@ -661,7 +661,7 @@ body, html{
 	margin: 0 auto;
 	margin-top: 1%;
 	margin-bottom: 2em;
-	background-image: url(/imagenes/img/fondo_navidad.jpeg);
+	background-image: url('/static/imagenes/img/fondo_navidad.jpeg');
     border: 1px solid #ddd; /* Borde delgado */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
