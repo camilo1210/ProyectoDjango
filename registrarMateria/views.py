@@ -22,7 +22,7 @@ def agregar_materia(request):
         fecha_vencimiento = parse_datetime(request.POST.get('fechaVencimiento'))
 
         try:
-            proveedor = Proveedores.objects.get(id=int(proveedor_id))  # Obtener instancia
+            proveedor = Proveedores.objects.get(idProvedor=int(proveedor_id))  # Obtener instancia
 
             materia = MateriaPrima(
                 nombreMateriaPrima=nombre,

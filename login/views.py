@@ -25,7 +25,7 @@ def loginRegister(request):
                     return redirect('/adminUsuarios/')  # Redirigir al admin
                 elif user.first_name == 'Usuario':
                     login(request, user)
-                    return redirect('inventario:home')  # Redirigir al home del usuario
+                    return redirect('inventario:Inventario')  # Redirigir al Inventario del usuario
                 else:
                     messages.error(request, 'El usuario no tiene un rol válido asignado.')
             else:
@@ -64,5 +64,5 @@ def register(request):
 def adminUsuarios(request):
     return render(request, 'adminUsuarios/admin_user.html')  # Ruta al HTML de adminUsuarios
 
-def home(request):
-    return render(request, 'inventario/inventario.html')  # Ruta al HTML de home
+def Inventario(request):
+    return render(request, 'inventario/inventario.html')  # Ruta al HTML de Inventario
