@@ -147,29 +147,33 @@
 		<div class="inventario">
 			<div class="inventario-block">
 				<label for="materia-prima">NOMBRE DEL PROVEEDOR</label>
-				<input type="text" id="materia-prima" name="materia-prima">
+				<input type="text" id="nombreProvedor" name="nombreProvedor">
 			</div>
 
 			<div class="inventario-block">
 				<label for="costo">DIRECCION</label>
-				<input type="text" id="costo" name="costo">
+				<input type="text" id="direccion" name="direccion">
 			</div>
 			
 		</div>
 		<div class="externo-button">
-			<button class="btn-guardar">GUARDAR</button>
-		</div>
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Guardar proveedor</button>
+			</form>
+		</div>		
 		<div class="externo-button">
 			<button class="btn-registrar">REGISTRAR</button>
 		</div>
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles">NOVEDADES Y NOTIFICACIONES <small>Linea de suministros</small></h1>
+			<h1 class="text-titles">NOVEDADES Y NOTIFICACIONES <small>Linea de suministros</small><h1>
 			</div>
 			<section id="cd-timeline" class="cd-container">
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img">
-                        <img src="/imagenes/icons/colanta.png" alt="user-picture">
+                        <img src="{% static 'imagenes/icons/colanta.png' %}" alt="user-picture">
                     </div>
                     <div class="cd-timeline-content">
                         <h4 class="text-center text-titles">1 - COLANTA</h4>
@@ -182,7 +186,7 @@
                 </div>  
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img">
-                        <img src="/imagenes/icons/bimbo.jpeg" alt="user-picture">
+                        <img src="{% static 'imagenes/icons/bimbo.jpeg' %}" alt="user-picture">
                     </div>
                     <div class="cd-timeline-content">
                         <h4 class="text-center text-titles">2 - BIMBO</h4>
@@ -195,7 +199,7 @@
                 </div>
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img">
-                        <img src="/imagenes/icons/puratos.png" alt="user-picture">
+                        <img src="{% static 'imagenes/icons/puratos.png' %}" alt="user-picture">
                     </div>
                     <div class="cd-timeline-content">
                         <h4 class="text-center text-titles">3 - PURATOS</h4>
@@ -208,7 +212,7 @@
                 </div>
                 <div class="cd-timeline-block">
                     <div class="cd-timeline-img">
-                        <img src="/imagenes/icons/sanin.png" alt="user-picture">
+                        <img src="{% static '/imagenes/icons/sanin.png' %}" alt="user-picture">
                     </div>
                     <div class="cd-timeline-content">
                         <h4 class="text-center text-titles">4 - SANIN</h4>
@@ -319,15 +323,16 @@
 		</div>
 	</div>
 	<!--====== Scripts -->
-	<script src="/script/jquery-3.1.1.min.js"></script>
-	<script src="/script/bootstrap.min.js"></script>
-	<script src="/script/material.min.js"></script>
-	<script src="/script/ripples.min.js"></script>
-	<script src="/script/sweetalert2.min.js"></script>
-	<script src="/script/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/script/main.js"></script>
+	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/material.min.js'	 %}"></script>
+	<script src="{% static 'scripts/ripples.min.js' %}"></script>
+	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'scripts/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
+	{% load static %}
 </body>
 </html>

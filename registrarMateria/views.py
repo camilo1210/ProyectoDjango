@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.utils.dateparse import parse_datetime
 from .models import MateriaPrima
 from registrar_prov.models import Proveedores
-from registrar_prov.models import Proveedores
 
 def agregar_materia(request):
     if request.method == 'POST':
@@ -46,3 +45,7 @@ def agregar_materia(request):
 def vista_add_materia(request):
     proveedores = Proveedores.objects.all()
     return render(request, 'materia_prima/add_materia.html', {'proveedores': proveedores})
+
+def registrar_prov(request):
+    return render(request, 'registrar_prov/registrar_prov.html')
+    
