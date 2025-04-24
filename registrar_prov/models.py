@@ -9,4 +9,4 @@ class Proveedores(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'MateriaPrima'
+        db_table = 'Proveedores'

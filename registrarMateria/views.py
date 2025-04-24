@@ -3,11 +3,7 @@ from django.shortcuts import render, redirect
 from django.utils.dateparse import parse_datetime
 from .models import MateriaPrima
 from registrar_prov.models import Proveedores
-
-
-def vista_add_materia(request):
-    return render(request, 'materia_prima/add_materia.html')
-
+from registrar_prov.models import Proveedores
 
 def agregar_materia(request):
     if request.method == 'POST':
@@ -22,7 +18,7 @@ def agregar_materia(request):
         fecha_vencimiento = parse_datetime(request.POST.get('fechaVencimiento'))
 
         try:
-            proveedor = Proveedores.objects.get(idProvedor=int(proveedor_id))  # Obtener instancia
+            proveedor = Proveedores.objects.get(pk=int(proveedor_id))  # Obtener instancia
 
             materia = MateriaPrima(
                 nombreMateriaPrima=nombre,
@@ -45,3 +41,8 @@ def agregar_materia(request):
             print("❌ Error al guardar:", e)
 
     return render(request, 'materia_prima/add_materia.html')
+
+
+def vista_add_materia(request):
+    proveedores = Proveedores.objects.all()
+    return render(request, 'materia_prima/add_materia.html', {'proveedores': proveedores})
