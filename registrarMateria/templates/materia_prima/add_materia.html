@@ -5,8 +5,8 @@
 	<title>Agregar materia prima</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="{% static css/main.css' %}">
-	<link rel="icon" href="{% static imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
 <body>
 	<!-- SideBar -->
@@ -20,13 +20,13 @@
 			<!-- SideBar User info -->
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
-					<img src="{% static imagenes/icons/logo_navidad.png' %}" alt="UserIcon">
+					<img src="{% static 'imagenes/icons/logo_navidad.png' %}" alt="UserIcon">
 					<figcaption class="text-center text-titles">Andrés</figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
 						{% comment %} Falta configurar la ruta de configuracion {% endcomment %}
-						<a href="{% static html/configuraciones.html' %}">
+						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
 						</a>
 					</li>
@@ -351,15 +351,16 @@
 	  	</div>
 	</div>
 	<!--====== Scripts -->
-	<script src="/script/jquery-3.1.1.min.js"></script>
-	<script src="/script/bootstrap.min.js"></script>
-	<script src="/script/material.min.js"></script>
-	<script src="/script/ripples.min.js"></script>
-	<script src="/script/sweetalert2.min.js"></script>
-	<script src="/script/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/script/main.js"></script>
+	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/material.min.js'	 %}"></script>
+	<script src="{% static 'scripts/ripples.min.js' %}"></script>
+	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'scripts/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
+	{% load static %}
 </body>
 </html>

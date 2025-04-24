@@ -1,10 +1,12 @@
+{% load static %}	
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<title>Teacher</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
 <body>
 	<!-- SideBar -->
@@ -388,15 +390,16 @@
 	  	</div>
 	</div>
 	<!--====== Scripts -->
-	<script src="/script/jquery-3.1.1.min.js"></script>
-	<script src="/script/bootstrap.min.js"></script>
-	<script src="/script/material.min.js"></script>
-	<script src="/script/ripples.min.js"></script>
-	<script src="/script/sweetalert2.min.js"></script>
-	<script src="/script/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/script/main.js"></script>
+	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/material.min.js'	 %}"></script>
+	<script src="{% static 'scripts/ripples.min.js' %}"></script>
+	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'scripts/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
+	{% load static %}
 </body>
 </html>

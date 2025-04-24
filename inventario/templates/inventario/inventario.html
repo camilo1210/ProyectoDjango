@@ -5,7 +5,6 @@
 	<title>Inventario</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
@@ -26,9 +25,9 @@
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>
-						<a href="{%static 'configuracion' %}">
+						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
-						</a>
+						 </a>
 					</li>
 					<li>
 						<a href="#!" class="btn-exit-system">
@@ -40,8 +39,8 @@
 			<!-- SideBar Menu -->
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
-					<a href="{% url 'agregar_materia' %}" class="btn btn-primary">
-						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA <!--ESTE ES UN ICONO-->
+					<a href="{% url 'agregar_materia' %}">
+						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA  <!--ESTE ES UN ICONO-->
 					</a>
 				</li>
 				<li>
@@ -50,10 +49,10 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="{%static '/html/inventario.html' %}"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
+							<a href="#!"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
 						</li>
 						<li>
-							<a href="{%static '/html/registrar_salida.html' %}"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
+							<a href="{% url 'registrar_salida' %}"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
 						</li>
 					</ul>
 				</li>
@@ -64,28 +63,28 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="{%static '/html/reporte_ventas.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
+							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
 						</li>
 						<li>
-							<a href="{%static '/html/reporte_inven.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
+							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
 						</li>
 						<li>
-							<a href="{%static '/html/reporte_stock.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
+							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
 						</li>
 						<li>
-							<a href="{%static '/html/reporte_caduci.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
+							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
 						</li>
 						<li>
-							<a href="{%static '/html/reporte_provee.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
+							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
 						</li>
 						<li>
-							<a href="{%static '/html/reporte_compra.html' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
+							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
 						</li>
 						<li>
-							<a href="/html/reporte_tende.html"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
+							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
 						</li>
 						<li>
-							<a href="{%static 'html/modificar_report.html' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
+							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
 						</li>
 					</ul>
 				</li>
@@ -95,10 +94,10 @@
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="{%static 'html/perfil.html' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
+							<a href="{% url 'perfil' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
 						</li>
 						<li>
-							<a href="{%static 'html/admin_user.html' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
+							<a href="{% url 'admin' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
 						</li>
 					</ul>
 				</li>
@@ -155,7 +154,7 @@
 					
 					<!-- El filtro que se mostrará al hacer clic en el ícono -->
 					<div class="filtro">
-						<form>
+						<form> 
 							<div class="contenido-filtro">
 								<p>Filtros</p> 
 								<a href="#!">Limpiar filtros</a>
@@ -278,7 +277,7 @@
 								<li><a href="#!">»</a></li>
 								</ul>
 								<div class="boton-general">
-									<a href="/html/registrar_salida.html"><button class="btn-registrar-prov">Registrar Salida</button></a>
+									<a href="{% url 'registrar_salida' %}"><button class="btn-registrar-prov">Registrar Salida</button></a>
 								</div>
 							</div>
 					</div>
@@ -298,7 +297,7 @@
 			<div class="list-group">
 			<div class="list-group-item">
 				    <div class="row-action-primary">
-				    <img src="/imagenes/img/andres.jpg" alt="" class="notificaciones">
+				    <img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
 				    <div class="least-content">5 m</div>
@@ -309,7 +308,7 @@
 			<div class="list-group-separator"></div>
 			<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/Asta.jpeg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/Asta.jpeg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
 				    <div class="least-content">15m</div>
@@ -320,7 +319,7 @@
 			<div class="list-group-separator"></div>
 				<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/dva.jpeg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/dva.jpeg' %}" alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
 				    <div class="least-content">25m</div>
@@ -331,7 +330,7 @@
 			<div class="list-group-separator"></div>
 			<div class="list-group-item">
 				    <div class="row-action-primary">
-						<img src="/imagenes/img/andres.jpg" alt="" class="notificaciones">
+						<img src="{%static '/imagenes/img/andres.jpg' %}"alt="" class="notificaciones">
 				    </div>
 				    <div class="row-content">
 				    <div class="least-content">5h</div>
@@ -382,16 +381,17 @@
 	</div>
 	</div>
 	<!--====== Scripts -->
-	{% load static %}
-	<script src="{% static 'script/jquery-3.1.1.min.js' %}"></script>
-	<script src="{% static 'script/bootstrap.min.js' %}"></script>
-	<script src="{% static 'script/material.min.js'	 %}"></script>
-	<script src="{% static 'script/ripples.min.js' %}"></script>
-	<script src="{% static 'script/sweetalert2.min.js' %}"></script>
-	<script src="{% static 'script/jquery.mCustomScrollbar.concat.min.js' %}"></script>
-	<script src="{% static 'script/main.js' %}"></script>
+	
+	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
+	<script src="{% static 'scripts/material.min.js'	 %}"></script>
+	<script src="{% static 'scripts/ripples.min.js' %}"></script>
+	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
+	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+	<script src="{% static 'scripts/main.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
+	{% load static %}
 </body>
 </html>
