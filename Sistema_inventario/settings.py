@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
         'USER': 'root',  # Reemplaza con tu usuario de MySQL
-        'PASSWORD': 'anca',  # Reemplaza con tu contraseña de MySQL
+        'PASSWORD': '452678',  # Reemplaza con tu contraseña de MySQL
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -140,11 +140,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# Para archivos estáticos
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Esto le dice a Django que busque archivos estáticos en la carpeta 'static' dentro de tu proyecto
-]
+# Para archivos multimedia (imágenes subidas)
+MEDIA_URL = '/imagenes/'
+MEDIA_ROOT = BASE_DIR / 'imagenes'
+
 
 
 # Default primary key field type

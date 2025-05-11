@@ -1,10 +1,11 @@
-from django.contrib import admin
-from django.urls import path, include
+# inventario/urls.py
 from django.urls import path
-from .views import listado_inventario
+from . import views
 
-app_name = 'inventario'
+app_name = 'inventario_app'
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', listado_inventario, name='home'),
+    path('', views.Inventario, name='Inventario'),
+    path('configuracion/', views.configuracion, name='configuracion'),
+    path('agregar/', views.vista_add_materia, name='agregar_materia'),  # ← usa la que ya tienes
 ]
