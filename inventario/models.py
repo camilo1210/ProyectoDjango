@@ -16,7 +16,7 @@ class Materiaprima(models.Model):
         return self.nombremateriaprima
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'MateriaPrima'
 
 

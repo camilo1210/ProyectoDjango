@@ -1,6 +1,6 @@
 
 from django.db import models
-
+###
 class MateriaPrima(models.Model):
     idmateriaprima = models.AutoField(db_column='idMateriaPrima', primary_key=True)
     nombreMateriaPrima = models.CharField(db_column='nombreMateriaPrima', max_length=45)

@@ -222,6 +222,7 @@
 											<th class="text-center">Proveedor</th>
 											<th class="text-center">Cantidad</th>
 											<th class="text-center">Unidad de medida</th>
+											<th class="text-center">Categoria</th>
 											<th class="text-center">Marca</th>
 											<th class="text-center">Fecha llegada</th>
 											<th class="text-center">Fecha Vencimiento</th>
@@ -233,23 +234,36 @@
 										{% for materia in materias %}
 										<tr>
 											<td>{{ forloop.counter }}</td>
-											<td>{{ materia.nombremateriaprima }}</td>
-											<td>{{ materia.costo }}</td>
-											<td>{{ materia.proveedor }}</td>
-											<td>{{ materia.cantidad }}</td>
-											<td>{{ materia.unidadmedida }}</td>
-											<td>{{ materia.marca }}</td>
-											<td>{{ materia.fechallegada|date:"d/m/Y" }}</td>
-											<td>{{ materia.fechavencimiento|date:"d/m/Y" }}</td>
+
+											<td><input type="text" id="nombre-{{ materia.idmateriaprima }}"
+													value="{{ materia.nombremateriaprima }}" disabled></td>
+											<td><input type="number" id="costo-{{ materia.idmateriaprima }}"
+													value="{{ materia.costo }}" disabled></td>
+											<td><input type="number" id="proveedor-{{ materia.idmateriaprima }}"
+													value="{{ materia.proveedor.idprovedor }}" disabled></td>
+											<td><input type="number" id="cantidad-{{ materia.idmateriaprima }}"
+													value="{{ materia.cantidad }}" disabled></td>
+											<td><input type="text" id="unidad-{{ materia.idmateriaprima }}"
+													value="{{ materia.unidadmedida }}" disabled></td>
+											<td><input type="text" id="categoria-{{ materia.idmateriaprima }}"
+											 value="{{ materia.categoria }}" disabled></td>
+											<td><input type="text" id="marca-{{ materia.idmateriaprima }}"
+													value="{{ materia.marca }}" disabled></td>
+											<td><input type="date" id="llegada-{{ materia.idmateriaprima }}"
+													value="{{ materia.fechallegada|date:'Y-m-d' }}" disabled></td>
+											<td><input type="date" id="vencimiento-{{ materia.idmateriaprima }}"
+													value="{{ materia.fechavencimiento|date:'Y-m-d' }}" disabled></td>
 											<td>
-												<a href="#!"
-													class="btn btn-success btn-raised btn-xs">
+												<button class="btn btn-success btn-raised btn-xs actualizar-btn"
+													onclick="toggleEdicion(this, {{ materia.idmateriaprima }})"	
+													id="boton-{{ materia.idmateriaprima }}">
 													<i class="zmdi zmdi-refresh"></i>
-												</a>
+												</button>
 											</td>
 											<td>
-												<a href="#!"
-													class="btn btn-danger btn-raised btn-xs">
+												<a href="{% url 'inventario:delete_materia' materia.idmateriaprima %}"
+													class="btn btn-danger btn-raised btn-xs"
+													onclick="return confirm('¿Estás seguro de eliminar esta materia prima?');">
 													<i class="zmdi zmdi-delete"></i>
 												</a>
 											</td>
@@ -264,10 +278,6 @@
 								<ul class="pagination pagination-sm">
 									<li class="disabled"><a href="#!">«</a></li>
 									<li class="active"><a href="#!">1</a></li>
-									<li><a href="#!">2</a></li>
-									<li><a href="#!">3</a></li>
-									<li><a href="#!">4</a></li>
-									<li><a href="#!">5</a></li>
 									<li><a href="#!">»</a></li>
 								</ul>
 								<div class="boton-general">
@@ -392,6 +402,7 @@
 	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 	<script src="{% static 'scripts/main.js' %}"></script>
+	<script src="{% static 'javascript/inventario.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
