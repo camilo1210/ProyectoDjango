@@ -1,8 +1,11 @@
 from django.db import models
 
 class Proveedores(models.Model):
-    nombre = models.CharField(max_length=255)
-    direccion = models.CharField(max_length=255)
+    idProvedor = models.AutoField(db_column='idProvedor', primary_key=True)
+    nombreProvedor = models.CharField(db_column='nombreProvedor', max_length=45)
+    direccion = models.CharField(db_column='direccion', max_length=45)
+    telefono = models.CharField(db_column='telefono', max_length=45)
 
-    def __str__(self):
-        return self.nombre
+    class Meta:
+        managed = False  # Cambia a True si quieres que Django administre la tabla
+        db_table = 'Proveedores'
