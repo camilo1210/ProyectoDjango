@@ -1,45 +1,51 @@
 function toggleEdicion(button, id) {
   const icon = button.querySelector("i");
-  const nombreInput = document.getElementById(`nombre-${id}`);
+  const nombremateriaprimaInput = document.getElementById(
+    `nombremateriaprima-${id}`
+  );
   const costoInput = document.getElementById(`costo-${id}`);
   const proveedorInput = document.getElementById(`proveedor-${id}`);
   const cantidadInput = document.getElementById(`cantidad-${id}`);
-  const unidadInput = document.getElementById(`unidad-${id}`);
+  const unidadmedidaInput = document.getElementById(`unidadmedida-${id}`);
   const categoriaInput = document.getElementById(`categoria-${id}`);
   const marcaInput = document.getElementById(`marca-${id}`);
-  const llegadaInput = document.getElementById(`llegada-${id}`);
-  const vencimientoInput = document.getElementById(`vencimiento-${id}`);
-  const esModoEdicion = !nombreInput.disabled;
+  const fechallegadaInput = document.getElementById(`fechallegada-${id}`);
+  const fechavencimientoInput = document.getElementById(
+    `fechavencimiento-${id}`
+  );
+  const esModoEdicion = !nombremateriaprimaInput.disabled;
 
   if (!esModoEdicion) {
     // Cambiar a modo edición
-    nombreInput.disabled = false;
+    nombremateriaprimaInput.disabled = false;
     costoInput.disabled = false;
     proveedorInput.disabled = false;
     cantidadInput.disabled = false;
-    unidadInput.disabled = false;
+    unidadmedidaInput.disabled = false;
     categoriaInput.disabled = false;
     marcaInput.disabled = false;
-    llegadaInput.disabled = false;
-    vencimientoInput.disabled = false;
+    fechallegadaInput.disabled = false;
+    fechavencimientoInput.disabled = false;
     icon.classList.remove("zmdi-refresh");
     icon.classList.add("zmdi-check");
   } else {
     // Guardar cambios
     const data = {
       id: id,
-      nombre: nombreInput.value,
+      nombre: nombremateriaprimaInput.value,
       costo: costoInput.value,
       proveedor: proveedorInput.value,
       cantidad: cantidadInput.value,
-      unidad: unidadInput.value,
+      unidad: unidadmedidaInput.value,
       categoria: categoriaInput.value,
       marca: marcaInput.value,
-      llegada: llegadaInput.value,
-      vencimiento: vencimientoInput.value,
+      llegada: fechallegadaInput.value,
+      vencimiento: fechavencimientoInput.value,
       // Agrega los demás campos aquí
     };
-console.log(data);
+    console.log("Datos enviados:", data); // 👈 Esto es clave para depurar
+
+    console.log(data);
     fetch(`/inventario/actualizar/${id}/`, {
       method: "POST",
       headers: {
@@ -48,24 +54,33 @@ console.log(data);
       },
       body: JSON.stringify({
         id: id,
-        nombremateriaprima: document.getElementById(`nombre-${id}`).value,
+        nombremateriaprima: document.getElementById(`nombremateriaprima-${id}`)
+          .value,
         costo: document.getElementById(`costo-${id}`).value,
         proveedor: document.getElementById(`proveedor-${id}`).value,
         cantidad: document.getElementById(`cantidad-${id}`).value,
-        unidadmedida: document.getElementById(`unidad-${id}`).value,
+        unidadmedida: document.getElementById(`unidadmedida-${id}`).value,
         categoria: document.getElementById(`categoria-${id}`).value,
         marca: document.getElementById(`marca-${id}`).value,
-        fechallegada: document.getElementById(`llegada-${id}`).value,
-        fechavencimiento: document.getElementById(`vencimiento-${id}`).value,
+        fechallegada: document.getElementById(`fechallegada-${id}`).value,
+        fechavencimiento: document.getElementById(`fechavencimiento-${id}`)
+          .value,
       }),
-    }).then((res) => {
-      if (res.ok) {
-        alert("Cambios guardados");
-        location.reload();
-      } else {
-        alert("Error al guardar");
-      }
-    });
+    })
+      .then((res) => res.json()) // 👈 Captura JSON con el error
+      .then((responseData) => {
+        if (responseData.success) {
+          alert("Cambios guardados");
+          location.reload();
+        } else {
+          console.error("Error en servidor:", responseData.error); // 👈 Muestra el error exacto
+          alert("Error al guardar: " + responseData.error);
+        }
+      })
+      .catch((error) => {
+        console.error("Error en fetch:", error);
+        alert("Error inesperado");
+      });
   }
 }
 

@@ -4,6 +4,7 @@
 
 <head>
 	<title>Inventario</title>
+	
 	<meta charset="UTF-8">
 	<meta name="viewport"
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,6 +13,7 @@
 </head>
 
 <body>
+	{% csrf_token %}
 	<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
 		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
@@ -235,7 +237,7 @@
 										<tr>
 											<td>{{ forloop.counter }}</td>
 
-											<td><input type="text" id="nombre-{{ materia.idmateriaprima }}"
+											<td><input type="text" id="nombremateriaprima-{{ materia.idmateriaprima }}"
 													value="{{ materia.nombremateriaprima }}" disabled></td>
 											<td><input type="number" id="costo-{{ materia.idmateriaprima }}"
 													value="{{ materia.costo }}" disabled></td>
@@ -243,15 +245,15 @@
 													value="{{ materia.proveedor.idprovedor }}" disabled></td>
 											<td><input type="number" id="cantidad-{{ materia.idmateriaprima }}"
 													value="{{ materia.cantidad }}" disabled></td>
-											<td><input type="text" id="unidad-{{ materia.idmateriaprima }}"
+											<td><input type="text" id="unidadmedida-{{ materia.idmateriaprima }}"
 													value="{{ materia.unidadmedida }}" disabled></td>
 											<td><input type="text" id="categoria-{{ materia.idmateriaprima }}"
 											 value="{{ materia.categoria }}" disabled></td>
 											<td><input type="text" id="marca-{{ materia.idmateriaprima }}"
 													value="{{ materia.marca }}" disabled></td>
-											<td><input type="date" id="llegada-{{ materia.idmateriaprima }}"
+											<td><input type="date" id="fechallegada-{{ materia.idmateriaprima }}"
 													value="{{ materia.fechallegada|date:'Y-m-d' }}" disabled></td>
-											<td><input type="date" id="vencimiento-{{ materia.idmateriaprima }}"
+											<td><input type="date" id="fechavencimiento-{{ materia.idmateriaprima }}"
 													value="{{ materia.fechavencimiento|date:'Y-m-d' }}" disabled></td>
 											<td>
 												<button class="btn btn-success btn-raised btn-xs actualizar-btn"
