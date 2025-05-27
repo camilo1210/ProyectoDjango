@@ -1,28 +1,57 @@
-{% load static %}	
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-user</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-        />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/style-admin-user.css' %}">
-    <link rel="icon" href="{% static 'imagenes/img/icono.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'imagenes/icono.ico' %}" type="image/x-icon">
 </head>
+
 <body>
-    <div  class="swiper mySwiper">
+    <div class="swiper mySwiper">
         <div class="swiper-wrapper">
 
         </div>
     </div>
+    <div id="userModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Opciones del usuario</h3>
+            <button id="editUserBtn">Modificar</button>
+            <button id="deleteUserBtn">Eliminar</button>
+        </div>
+    </div>
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Modificar Usuario</h3>
+            <label>Nuevo nombre de usuario:</label>
+            <input type="text" id="newUsername" placeholder="Nuevo nombre de usuario">
+
+            <label>Rol:</label>
+            <select id="newFirstName">
+                <option value="Admin">Admin</option>
+                <option value="Usuario">Usuario</option>
+            </select>
+
+            <div style="margin-top: 15px;">
+                <button id="confirmEdit">Guardar Cambios</button>
+                <button id="cancelEdit">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{% static 'scripts/script-admin-user.js' %}"></script>
-{% load static %}	
+    <script src="{% static 'javascript/script-admin-user.js' %}"></script>
+    {% load static %}
 
 </body>
+
 </html>

@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
         'USER': 'root',  # Reemplaza con tu usuario de MySQL
-        'PASSWORD': '452678',  # Reemplaza con tu contraseña de MySQL
+        'PASSWORD': 'anca',  # Reemplaza con tu contraseña de MySQL
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -157,3 +157,18 @@ MEDIA_ROOT = BASE_DIR / 'imagenes'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}

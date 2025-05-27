@@ -1,14 +1,19 @@
-{% load static %}	
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<title>Inventario</title>
+	
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
+
 <body>
+	{% csrf_token %}
 	<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
 		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
@@ -27,7 +32,7 @@
 					<li>
 						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
-						 </a>
+						</a>
 					</li>
 					<li>
 						<a href="#!" class="btn-exit-system">
@@ -40,64 +45,77 @@
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
 					<a href="{% url 'agregar_materia' %}">
-						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA  <!--ESTE ES UN ICONO-->
+						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA <!--ESTE ES UN ICONO-->
 					</a>
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-storage zmdi-hc-fw"></i> INVENTARIO <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-storage zmdi-hc-fw"></i> INVENTARIO <i
+							class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
 							<a href="#!"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
 						</li>
 						<li>
-							<a href="{% url 'registrar_salida' %}"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
+							<a href="{% url 'registrar_salida' %}"><i
+									class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
 						</li>
 					</ul>
 				</li>
 
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-file-text zmdi-hc-fw"></i> REPORTES <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-file-text zmdi-hc-fw"></i> REPORTES <i
+							class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
+							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								ventas</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
+							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								inventario</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
+							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								stock</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
+							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								caducidad</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
+							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								proveedores</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
+							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								compras</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
+							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
+								tendencia</a>
 						</li>
 						<li>
-							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
+							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar
+								reporte</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-account zmdi-hc-fw"></i> USUARIO <i class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-account zmdi-hc-fw"></i> USUARIO <i
+							class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
 							<a href="{% url 'perfil' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
 						</li>
 						<li>
-							<a href="{% url 'admin' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
+							<a href="{% url 'adminUsuarios' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de
+								usuario</a>
 						</li>
 					</ul>
 				</li>
@@ -139,29 +157,30 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			<h1 class="text-titles"><i class="zmdi zmdi-archive zmdi-hc-fw"></i> INVENTARIO <small>Registro y existencias</small></h1>
+				<h1 class="text-titles"><i class="zmdi zmdi-archive zmdi-hc-fw"></i> INVENTARIO <small>Registro y
+						existencias</small></h1>
 			</div>
 		</div>
-		<div class="container-fluid"> 
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
 					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-					<li class="active"><a href="#list" data-toggle="tab">INVENTARIO</a></li>
+						<li class="active"><a href="#list" data-toggle="tab">INVENTARIO</a></li>
 					</ul>
 					<a href="#!" class="icono-filtro" id="menu-filtro">
 						<i class="zmdi zmdi-search-in-file zmdi-hc-fw"></i>
 					</a>
-					
+
 					<!-- El filtro que se mostrará al hacer clic en el ícono -->
 					<div class="filtro">
-						<form> 
+						<form>
 							<div class="contenido-filtro">
-								<p>Filtros</p> 
+								<p>Filtros</p>
 								<a href="#!">Limpiar filtros</a>
 							</div>
 							<div>
 								<div class="contenido-filtro-filtrado">
-									<button> Especias <i class="zmdi zmdi-close"></i></button> 
+									<button> Especias <i class="zmdi zmdi-close"></i></button>
 									<button> Lacteos <i class="zmdi zmdi-close"></i></button>
 									<button> Azucar <i class="zmdi zmdi-close"></i></button>
 								</div>
@@ -169,9 +188,9 @@
 							<hr class="linea-filtro">
 							<div class="contenido-filtro-categorias">
 								<h3>Categorias</h3>
-								<input type="checkbox" name="categoria"value="lacteos"> Lacteos
-								<input type="checkbox" name="categoria"value="encurtidos">Encurtidos
-								<input type="checkbox" name="categoria"value="vegetales"> Vegetales
+								<input type="checkbox" name="categoria" value="lacteos"> Lacteos
+								<input type="checkbox" name="categoria" value="encurtidos">Encurtidos
+								<input type="checkbox" name="categoria" value="vegetales"> Vegetales
 
 							</div>
 							<hr class="linea-filtro">
@@ -186,15 +205,15 @@
 							</div>
 							<hr class="linea-filtro">
 							<div class="contenido-filtro-categorias">
-								<h3> AGREGAR FILTRO 
-									<button class="btn-close"><i class="zmdi zmdi-close"></i></button> 
+								<h3> AGREGAR FILTRO
+									<button class="btn-close"><i class="zmdi zmdi-close"></i></button>
 									<button class="btn-check"><i class="zmdi zmdi-check"></i></button>
 								</h3>
 							</div>
 						</form>
 					</div>
 					<div id="myTabContent" class="tab-content">
-					  	<div class="tab-pane fade active in" id="list">
+						<div class="tab-pane fade active in" id="list">
 							<div class="table-responsive">
 								<table class="table table-hover text-center">
 									<thead>
@@ -205,6 +224,7 @@
 											<th class="text-center">Proveedor</th>
 											<th class="text-center">Cantidad</th>
 											<th class="text-center">Unidad de medida</th>
+											<th class="text-center">Categoria</th>
 											<th class="text-center">Marca</th>
 											<th class="text-center">Fecha llegada</th>
 											<th class="text-center">Fecha Vencimiento</th>
@@ -213,74 +233,61 @@
 										</tr>
 									</thead>
 									<tbody>
+										{% for materia in materias %}
 										<tr>
-											<td>1</td>
-											<td>Harina de trigo</td>
-											<td>25,000</td>
-											<td>Molinos del Valle S.A.</td>
-											<td>50 </td>
-											<td>50 kg</td>
-											<td>PanMaster</td>
-											<td>20/11/2024</td>
-											<td>20/05/2025</td>
-											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
-											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+											<td>{{ forloop.counter }}</td>
+
+											<td><input type="text" id="nombremateriaprima-{{ materia.idmateriaprima }}"
+													value="{{ materia.nombremateriaprima }}" disabled></td>
+											<td><input type="number" id="costo-{{ materia.idmateriaprima }}"
+													value="{{ materia.costo }}" disabled></td>
+											<td><input type="number" id="proveedor-{{ materia.idmateriaprima }}"
+													value="{{ materia.proveedor.idprovedor }}" disabled></td>
+											<td><input type="number" id="cantidad-{{ materia.idmateriaprima }}"
+													value="{{ materia.cantidad }}" disabled></td>
+											<td><input type="text" id="unidadmedida-{{ materia.idmateriaprima }}"
+													value="{{ materia.unidadmedida }}" disabled></td>
+											<td><input type="text" id="categoria-{{ materia.idmateriaprima }}"
+											 value="{{ materia.categoria }}" disabled></td>
+											<td><input type="text" id="marca-{{ materia.idmateriaprima }}"
+													value="{{ materia.marca }}" disabled></td>
+											<td><input type="date" id="fechallegada-{{ materia.idmateriaprima }}"
+													value="{{ materia.fechallegada|date:'Y-m-d' }}" disabled></td>
+											<td><input type="date" id="fechavencimiento-{{ materia.idmateriaprima }}"
+													value="{{ materia.fechavencimiento|date:'Y-m-d' }}" disabled></td>
+											<td>
+												<button class="btn btn-success btn-raised btn-xs actualizar-btn"
+													onclick="toggleEdicion(this, {{ materia.idmateriaprima }})"	
+													id="boton-{{ materia.idmateriaprima }}">
+													<i class="zmdi zmdi-refresh"></i>
+												</button>
+											</td>
+											<td>
+												<a href="{% url 'inventario:delete_materia' materia.idmateriaprima %}"
+													class="btn btn-danger btn-raised btn-xs"
+													onclick="return confirm('¿Estás seguro de eliminar esta materia prima?');">
+													<i class="zmdi zmdi-delete"></i>
+												</a>
+											</td>
 										</tr>
+										{% empty %}
 										<tr>
-											<td>2</td>
-											<td>Azúcar blanca refinada</td>
-											<td>18,000</td>
-											<td>Dulces del Pacífico</td>
-											<td>30</td>
-											<td>50 kg</td>
-											<td>SweetLife</td>
-											<td>18/11/2024</td>
-											<td>18/11/2026</td>
-											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
-											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+											<td colspan="11">No hay materias primas registradas.</td>
 										</tr>
-										<tr>
-											<td>3</td>
-											<td>Levadura seca instantánea</td>
-											<td>12,000</td>
-											<td>Fermentos del Sur</td>
-											<td>40</td>
-											<td>500 g</td>
-											<td>Rise&Bake</td>
-											<td>19/11/2024</td>
-											<td>19/05/2025</td>
-											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
-											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
-										</tr>
-										<tr>
-											<td>4</td>
-											<td>Mantequilla sin sal</td>
-											<td>15,000</td>
-											<td>Lácteos Gourmet</td>
-											<td>20</td>
-											<td>10 kg</td>
-											<td>Panadería Real</td> <!-- Marca -->
-											<td>01/10/2024</td> <!-- Fecha llegada -->
-											<td>15/01/2025</td> <!-- Fecha vencimiento -->
-											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
-											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
-										</tr>
+										{% endfor %}
 									</tbody>
 								</table>
 								<ul class="pagination pagination-sm">
-								<li class="disabled"><a href="#!">«</a></li>
-								<li class="active"><a href="#!">1</a></li>
-								<li><a href="#!">2</a></li>
-								<li><a href="#!">3</a></li>
-								<li><a href="#!">4</a></li>
-								<li><a href="#!">5</a></li>
-								<li><a href="#!">»</a></li>
+									<li class="disabled"><a href="#!">«</a></li>
+									<li class="active"><a href="#!">1</a></li>
+									<li><a href="#!">»</a></li>
 								</ul>
 								<div class="boton-general">
-									<a href="{% url 'registrar_salida' %}"><button class="btn-registrar-prov">Registrar Salida</button></a>
+									<a href="{% url 'registrar_salida' %}"><button class="btn-registrar-prov">Registrar
+											Salida</button></a>
 								</div>
 							</div>
-					</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -295,60 +302,65 @@
 				NOTIFICACIONES <i class="zmdi zmdi-close btn-Notifications-area"></i>
 			</div>
 			<div class="list-group">
-			<div class="list-group-item">
-				    <div class="row-action-primary">
-				    <img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
-				    </div>
-				    <div class="row-content">
-				    <div class="least-content">5 m</div>
-				    <h4 class="list-group-item-heading">Entrada de producto</h4>
-				    <p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han sido añadidas correctamente.</p>
-				    </div>
-			</div>
-			<div class="list-group-separator"></div>
-			<div class="list-group-item">
-				    <div class="row-action-primary">
-						<img src="{%static '/imagenes/img/Asta.jpeg' %}" alt="" class="notificaciones">
-				    </div>
-				    <div class="row-content">
-				    <div class="least-content">15m</div>
-				    <h4 class="list-group-item-heading">Salida de productos</h4>
-				    <p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido retiradas del inventario.</p>
-				</div>
-			</div>
-			<div class="list-group-separator"></div>
 				<div class="list-group-item">
-				    <div class="row-action-primary">
-						<img src="{%static '/imagenes/img/dva.jpeg' %}" alt="" class="notificaciones">
-				    </div>
-				    <div class="row-content">
-				    <div class="least-content">25m</div>
-				    <h4 class="list-group-item-heading">Bajo stock</h4>
-				    <p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30 Realice un pedido pronto</p>
-				    </div>
+					<div class="row-action-primary">
+						<img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
+					</div>
+					<div class="row-content">
+						<div class="least-content">5 m</div>
+						<h4 class="list-group-item-heading">Entrada de producto</h4>
+						<p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han
+							sido añadidas correctamente.</p>
+					</div>
 				</div>
-			<div class="list-group-separator"></div>
-			<div class="list-group-item">
-				    <div class="row-action-primary">
-						<img src="{%static '/imagenes/img/andres.jpg' %}"alt="" class="notificaciones">
-				    </div>
-				    <div class="row-content">
-				    <div class="least-content">5h</div>
-				    <h4 class="list-group-item-heading">Actualización de inventario</h4>
-				    <p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido ajustada correctamente.</p>
-				    </div>
-			</div>
-			<div class="list-group-separator"></div>
-			<div class="list-group-item">
-				    <div class="row-action-primary">
+				<div class="list-group-separator"></div>
+				<div class="list-group-item">
+					<div class="row-action-primary">
+						<img src="{%static '/imagenes/img/Asta.jpeg' %}" alt="" class="notificaciones">
+					</div>
+					<div class="row-content">
+						<div class="least-content">15m</div>
+						<h4 class="list-group-item-heading">Salida de productos</h4>
+						<p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido
+							retiradas del inventario.</p>
+					</div>
+				</div>
+				<div class="list-group-separator"></div>
+				<div class="list-group-item">
+					<div class="row-action-primary">
+						<img src="{%static '/imagenes/img/dva.jpeg' %}" alt="" class="notificaciones">
+					</div>
+					<div class="row-content">
+						<div class="least-content">25m</div>
+						<h4 class="list-group-item-heading">Bajo stock</h4>
+						<p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30
+							Realice un pedido pronto</p>
+					</div>
+				</div>
+				<div class="list-group-separator"></div>
+				<div class="list-group-item">
+					<div class="row-action-primary">
+						<img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
+					</div>
+					<div class="row-content">
+						<div class="least-content">5h</div>
+						<h4 class="list-group-item-heading">Actualización de inventario</h4>
+						<p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido
+							ajustada correctamente.</p>
+					</div>
+				</div>
+				<div class="list-group-separator"></div>
+				<div class="list-group-item">
+					<div class="row-action-primary">
 						<i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>
-				    </div>
-				    <div class="row-content">
-				    <div class="least-content">7h</div>
-				    <h4 class="list-group-item-heading">Caducidad de productos</h4>
-				    <p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca de su fecha de expiración.</p>
-				    </div>
-			</div>
+					</div>
+					<div class="row-content">
+						<div class="least-content">7h</div>
+						<h4 class="list-group-item-heading">Caducidad de productos</h4>
+						<p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca
+							de su fecha de expiración.</p>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -356,32 +368,35 @@
 
 	<!-- Dialog help -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="Dialog-Help">
-	<div class="modal-dialog" role="document">
-		    <div class="modal-content">
-			    <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    	<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
-			    </div>
-			    <div class="modal-body">
-				<p>
-					Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de "Pan y Arte". 
-					Aquí encontrarás información para resolver tus dudas rápidamente.
-				</p>
-				<dl>
-					<dt>Correo electrónico:</dt>
-					<dd>andres.camilo.fernandez@correounivalle.edu.co</dd>
-					<dt>Teléfono:</dt>
-					<dd>662 482918</dd>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
+				</div>
+				<div class="modal-body">
+					<p>
+						Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de
+						"Pan y Arte".
+						Aquí encontrarás información para resolver tus dudas rápidamente.
+					</p>
+					<dl>
+						<dt>Correo electrónico:</dt>
+						<dd>andres.camilo.fernandez@correounivalle.edu.co</dd>
+						<dt>Teléfono:</dt>
+						<dd>662 482918</dd>
 					</dl>
 				</div>
-		<div class="modal-footer">
-		        	<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> Ok</button>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i
+							class="zmdi zmdi-thumb-up"></i> Ok</button>
+				</div>
+			</div>
 		</div>
-		</div>
-	</div>
 	</div>
 	<!--====== Scripts -->
-	
+
 	<script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
 	<script src="{% static 'scripts/bootstrap.min.js' %}"></script>
 	<script src="{% static 'scripts/material.min.js'	 %}"></script>
@@ -389,9 +404,11 @@
 	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 	<script src="{% static 'scripts/main.js' %}"></script>
+	<script src="{% static 'javascript/inventario.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
 	{% load static %}
 </body>
+
 </html>
