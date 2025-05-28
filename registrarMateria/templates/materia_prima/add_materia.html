@@ -215,8 +215,15 @@
           </div>
 
           <div class="inventario-block">
-            <label for="proveedor">PROVEEDOR (ID)</label>
-            <input type="number" id="proveedor" name="proveedor" required />
+            <label for="proveedor">PROVEEDOR</label>
+            <select id="proveedor" name="proveedor" required>
+              <option value="">Seleccione un proveedor</option>
+              {% for proveedor in proveedores %}
+              <option value="{{ proveedor.idprovedor }}">
+                {{ proveedor.nombreprovedor }}
+              </option>
+              {% endfor %}
+            </select>
           </div>
 
           <div class="inventario-block">
@@ -272,7 +279,9 @@
         </div>
 
         <div class="externo-button">
-          <button type="submit" class="btn-guardar">GUARDAR</button>
+          <button type="submit" class="btn-guardar">
+            GUARDAR MATERIA PRIMA
+          </button>
         </div>
       </form>
 
@@ -280,7 +289,7 @@
       <div class="externo-button">
         <button class="btn-guardar">GUARDAR</button>
       </div>
-      {% endcomment %}
+      {% endcomment %} {% comment %}
       <form method="POST" action="{% url 'agregar_materia' %}">
         {% csrf_token %}
         <!-- ... campos existentes ... -->
@@ -290,6 +299,7 @@
           </button>
         </div>
       </form>
+      {% endcomment %}
 
       <div class="externo-button">
         <a href="{% url 'registrar_prov:registrar_prov' %}"
