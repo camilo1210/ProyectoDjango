@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Header
   const headerContainer = document.getElementById("header");
   const today = new Date();
-  const options = { day: '2-digit', month: 'long', year: 'numeric' };
-  const formattedDate = today.toLocaleDateString('es-ES', options);
+  const options = { day: "2-digit", month: "long", year: "numeric" };
+  const formattedDate = today.toLocaleDateString("es-ES", options);
   headerContainer.innerHTML = `
     <h1 style="text-align: center;">Pan y Arte</h1>
     <p style="text-align: center; font-weight: bold;">Fecha: ${formattedDate}</p>
@@ -11,25 +11,78 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   // Proveedores
-  fetch('/reporte_provee/api/proveedores/')
-    .then(response => response.json())
-    .then(data => {
+  fetch("/reporte_provee/api/proveedores/")
+    .then((response) => response.json())
+    .then((data) => {
       console.log("Datos recibidos:", data);
-      const container = document.getElementById('proveedores-container');
+      const container = document.getElementById("proveedores-container");
 
-      data.forEach(proveedor => {
-        const card = document.createElement('div');
+      data.forEach((proveedor) => {
+        const card = document.createElement("div");
         card.innerHTML = `
-          <h2>Proveedor: ${proveedor.nombre}</h2>
-          <p><strong>ID:</strong> ${proveedor.id}</p>
-          <p><strong>Dirección:</strong> ${proveedor.direccion}</p>
-          <p><strong>Teléfono:</strong> ${proveedor.telefono}</p>
-          <hr>
-        `;
+    <h2>Proveedor: ${proveedor.nombre}</h2>
+    <p><strong>ID:</strong> ${proveedor.id}</p>
+    <p><strong>Dirección:</strong> ${proveedor.direccion}</p>
+    <p><strong>Teléfono:</strong> ${proveedor.telefono}</p>
+    <div id="materias-${proveedor.id}"></div> <!-- 💡 ESTE DIV SE CREA AQUÍ -->
+    <hr>
+  `;
         container.appendChild(card);
+        fetch(`/reporte_provee/api/proveedor/${proveedor.id}/materias/`)
+          .then((response) => response.json())
+          .then((materias) => {
+            const materiasDiv = document.getElementById(
+              `materias-${proveedor.id}`
+            );
+            if (materias.length === 0) {
+              materiasDiv.innerHTML =
+                "<p>No hay materias primas registradas para este proveedor.</p>";
+            } else {
+              let tablaHTML = `
+                <table border="1" style="width: 100%; margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Costo</th>
+                      <th>Cantidad</th>
+                      <th>Unidad</th>
+                      <th>Categoría</th>
+                      <th>Marca</th>
+                      <th>Fecha Llegada</th>
+                      <th>Fecha Vencimiento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              `;
+              materias.forEach((m) => {
+                tablaHTML += `
+                  <tr>
+                    <td>${m.nombre}</td>
+                    <td>${m.costo}</td>
+                    <td>${m.cantidad}</td>
+                    <td>${m.unidadMedida}</td>
+                    <td>${m.categoria}</td>
+                    <td>${m.marca}</td>
+                    <td>${m.fechaLlegada}</td>
+                    <td>${m.fechaVencimiento}</td>
+                  </tr>
+                `;
+              });
+              tablaHTML += "</tbody></table>";
+              materiasDiv.innerHTML = tablaHTML;
+            }
+          })
+          .catch((error) => {
+            console.error("Error cargando materias primas:", error);
+            const materiasDiv = document.getElementById(
+              `materias-${proveedor.id}`
+            );
+            materiasDiv.innerHTML =
+              '<p style="color: red;">Error cargando materias primas.</p>';
+          });
       });
     })
-    .catch(error => {
-      console.error('Error cargando proveedores:', error);
+    .catch((error) => {
+      console.error("Error cargando proveedores:", error);
     });
 });
