@@ -1,43 +1,80 @@
 
 from django.shortcuts import render, redirect
 from django.utils.dateparse import parse_datetime
+from django.utils import timezone
+from datetime import datetime
 from .models import MateriaPrima
 from registrar_prov.models import Proveedores
 
 def agregar_materia(request):
     if request.method == 'POST':
-        nombre = request.POST.get('nombreMateriaPrima')
-        costo = request.POST.get('costo')
-        proveedor_id = request.POST.get('proveedor')  # De aquí obtienes el ID
-        cantidad = request.POST.get('cantidad')
-        unidad = request.POST.get('unidadMedida')
-        categoria = request.POST.get('categoria')
-        marca = request.POST.get('marca')
-        fecha_llegada = parse_datetime(request.POST.get('fechaLlegada'))
-        fecha_vencimiento = parse_datetime(request.POST.get('fechaVencimiento'))
-
         try:
-            proveedor = Proveedores.objects.get(pk=int(proveedor_id))  # Obtener instancia
+            # Obtener y validar datos
+            nombre = request.POST.get('nombreMateriaPrima')
+            costo_str = request.POST.get('costo')
+            proveedor_id_str = request.POST.get('proveedor')
+            cantidad_str = request.POST.get('cantidad')
+            unidad = request.POST.get('unidadMedida')
+            categoria = request.POST.get('categoria')
+            marca = request.POST.get('marca')
+            fecha_llegada_str = request.POST.get('fechaLlegada')
+            fecha_vencimiento_str = request.POST.get('fechaVencimiento')
 
+            # Verificar que los campos numéricos no sean None
+            if not all([costo_str, proveedor_id_str, cantidad_str]):
+                print("❌ Error: Campos numéricos vacíos")
+                print(f"costo: {costo_str}")
+                print(f"proveedor_id: {proveedor_id_str}")
+                print(f"cantidad: {cantidad_str}")
+                return render(request, 'materia_prima/add_materia.html')
+
+            # Convertir strings a números
+            try:
+                costo = int(costo_str)
+                proveedor_id = int(proveedor_id_str)
+                cantidad = int(cantidad_str)
+            except ValueError as ve:
+                print("❌ Error convirtiendo números:", ve)
+                return render(request, 'materia_prima/add_materia.html')
+
+            # Convertir fechas
+            try:
+                fecha_llegada = timezone.make_aware(
+                    datetime.strptime(fecha_llegada_str, '%Y-%m-%dT%H:%M')
+                )
+                fecha_vencimiento = timezone.make_aware(
+                    datetime.strptime(fecha_vencimiento_str, '%Y-%m-%dT%H:%M')
+                )
+            except ValueError as ve:
+                print("❌ Error en formato de fecha:", ve)
+                return render(request, 'materia_prima/add_materia.html')
+
+            # Obtener proveedor
+            try:
+                proveedor = Proveedores.objects.get(pk=proveedor_id)
+            except Proveedores.DoesNotExist:
+                print("❌ El proveedor no existe")
+                return render(request, 'materia_prima/add_materia.html')
+
+            # Crear y guardar materia prima
             materia = MateriaPrima(
                 nombreMateriaPrima=nombre,
-                costo=int(costo),
-                proveedor=proveedor,  # Pasas el objeto, no el ID
-                cantidad=int(cantidad),
+                costo=costo,
+                proveedor=proveedor,
+                cantidad=cantidad,
                 unidadMedida=unidad,
                 categoria=categoria,
                 marca=marca,
                 fechaLlegada=fecha_llegada,
                 fechaVencimiento=fecha_vencimiento
-            )      
+            )
             materia.save()
             print("✅ Guardado con éxito:", materia)
-            return redirect('agregar_materia')
+            return redirect('vista_add_materia')
 
-        except Proveedores.DoesNotExist:
-            print("❌ El proveedor no existe.")
         except Exception as e:
-            print("❌ Error al guardar:", e)
+            print("❌ Error general:", e)
+            return render(request, 'materia_prima/add_materia.html')
 
     return render(request, 'materia_prima/add_materia.html')
 
