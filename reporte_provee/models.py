@@ -7,5 +7,6 @@ class Proveedor(models.Model):
     direccion = models.CharField(max_length=45)
     telefono = models.CharField(max_length=45)
 
-    def __str__(self):
-        return self.nombreProvedor
+    class Meta:
+        db_table = 'proveedor'  # <- Esto le dice a Django que use esta tabla exacta
+        managed = False
