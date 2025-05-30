@@ -19,6 +19,14 @@ def agregar_materia(request):
             marca = request.POST.get('marca')
             fecha_llegada_str = request.POST.get('fechaLlegada')
             fecha_vencimiento_str = request.POST.get('fechaVencimiento')
+            
+            print("Valores recibidos:")
+            print(f"costo: {costo_str}")
+            print(f"proveedor: {proveedor_id_str}")
+            print(f"cantidad: {cantidad_str}")
+
+            
+            
 
             if not all([costo_str, proveedor_id_str, cantidad_str]):
                 print("❌ Error: Campos numéricos vacíos")
@@ -78,4 +86,6 @@ def vista_add_materia(request):
 
 def registrar_prov(request):
     return render(request, 'registrar_prov/registrar_prov.html')
+
+
     
