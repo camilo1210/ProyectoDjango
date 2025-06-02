@@ -1214,6 +1214,112 @@ input:checked + .slider:before {
   text-align: center;
   color: #2c3e50;
 }
+#lista-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease;
+}
+
+.fila:hover {
+    background-color: #f0f0f0;
+}
+
+.encabezado {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.columna {
+    padding: 4px 8px;
+    word-break: break-word;
+    text-align: left;
+}
+.contenedor-alta-producto {
+  background-color: #f5f9ff;
+  padding: 25px;
+  max-width: 450px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.titulo-seccion-producto {
+  text-align: center;
+  color: #2d3e50;
+  margin-bottom: 20px;
+}
+
+.estructura-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.etiqueta-campo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.entrada-campo {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.boton-confirmar {
+  background-color: #1abc9c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-confirmar:hover {
+  background-color: #159d84;
+}
+
+@media (max-width: 768px) {
+    .fila {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .encabezado {
+        display: none;
+    }
+
+    .columna {
+        position: relative;
+        padding-left: 50%;
+        margin-bottom: 8px;
+    }
+
+    .columna::before {
+        position: absolute;
+        left: 10px;
+        top: 0;
+        font-weight: bold;
+        color: #777;
+        content: attr(data-label);
+    }
+}
 
 /*======= MEDIA QUERIES*/
 @media (max-width: 767px) {

@@ -158,9 +158,32 @@
 				<h1 class="text-titles"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> REPORTE <small>Stock</small>
 				</h1>
 			</div>
-			  <div class="contenedor-productos"></div>
-		</div>
+			<div class="contenedor-productos"></div>
+			<div class="contenedor-alta-producto">
+				<h2 class="titulo-seccion-producto">Registrar Nuevo Producto</h2>
+				<form id="formulario-producto" class="estructura-formulario">
+					<label for="campo-nombre" class="etiqueta-campo">Nombre del producto:</label>
+					<input type="text" id="campo-nombre" class="entrada-campo" required>
 
+					<label for="campo-categoria" class="etiqueta-campo">Categoría:</label>
+					<input type="text" id="campo-categoria" class="entrada-campo" required>
+
+					<label for="campo-precio" class="etiqueta-campo">Precio:</label>
+					<input type="number" id="campo-precio" class="entrada-campo" step="0.01" required>
+
+					<label for="campo-cantidad" class="etiqueta-campo">Cantidad:</label>
+					<input type="number" id="campo-cantidad" class="entrada-campo" required>
+
+					<button id="control-envio" type="submit" class="boton-confirmar">Guardar Producto</button>
+				</form>
+			</div>
+
+
+			<div class="input-container">
+				<label for="user-input">Observaciones:</label>
+				<textarea id="user-input" class="styled-input" placeholder="Ingresa tu texto..."></textarea>
+				<button class="save-button">Guardar</button>
+			</div>
 	</section>
 
 	<!-- Notifications area -->
@@ -272,6 +295,7 @@
 	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 	<script src="{% static 'scripts/main.js' %}"></script>
 	<script src="{% static 'scripts/reporte_stock.js' %}"></script>
+	<script src="{% static 'scripts/crear_producto.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>
