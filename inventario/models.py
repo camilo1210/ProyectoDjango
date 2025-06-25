@@ -5,7 +5,7 @@ class Materiaprima(models.Model):
     idmateriaprima = models.IntegerField(db_column='idMateriaPrima', primary_key=True)  # Field name made lowercase.
     nombremateriaprima = models.CharField(db_column='nombreMateriaPrima', max_length=45, blank=True, null=True)  # Field name made lowercase.
     costo = models.IntegerField(blank=True, null=True)
-    proveedor = models.ForeignKey('Proveedor', models.CASCADE, db_column='proveedor', blank=True, null=True)
+    proveedor = models.ForeignKey('Proveedor', models.DO_NOTHING, db_column='proveedor', blank=True, null=True)
     cantidad = models.IntegerField(blank=True, null=True)
     unidadmedida = models.CharField(db_column='unidadMedida', max_length=10, blank=True, null=True)  # Field name made lowercase.
     categoria = models.CharField(max_length=45, blank=True, null=True)
@@ -16,7 +16,7 @@ class Materiaprima(models.Model):
         return self.nombremateriaprima
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'MateriaPrima'
 
 

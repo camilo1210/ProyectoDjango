@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',  # Nombre de la base de datos que especificaste en el script
         'USER': 'root',  # Reemplaza con tu usuario de MySQL
-        'PASSWORD': '452678',  # Reemplaza con tu contraseña de MySQL
+        'PASSWORD': 'anca',  # Reemplaza con tu contraseña de MySQL
         'HOST': 'localhost',
         'PORT': '3307',
     }
@@ -142,10 +142,7 @@ USE_TZ = True
 
 # Para archivos estáticos
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Para archivos multimedia (imágenes subidas)
 MEDIA_URL = '/imagenes/'

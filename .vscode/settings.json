@@ -30,25 +30,5 @@
         "telefono",
         "Usar",
         "usuario"
-    ],
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#403248",
-        "activityBar.background": "#403248",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#71644e",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#e7e7e799",
-        "sash.hoverBorder": "#403248",
-        "statusBar.background": "#251d2a",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#403248",
-        "statusBarItem.remoteBackground": "#251d2a",
-        "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#251d2a",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#251d2a99",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#251D2A"
+    ]
 }
