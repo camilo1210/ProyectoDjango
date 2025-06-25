@@ -48,4 +48,6 @@ def vista_add_materia(request):
 
 def registrar_prov(request):
     return render(request, 'registrar_prov/registrar_prov.html')
-    
+
+def vista_inventario(request):
+    return render(request,'inventario/inventario.html')

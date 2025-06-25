@@ -12,5 +12,6 @@ urlpatterns = [
     path('eliminar/<int:idmateriaprima>/', views.eliminar_materia, name='delete_materia'),
     path('actualizar/<int:id>/', views.actualizar_materia, name='actualizar_materia'),
     path('inspeccionar-materiaprima/', inspeccionar_tabla_materiaprima),
+    
 
 ]

@@ -24,6 +24,9 @@ def configuracion(request):
 def vista_add_materia(request):
     return render(request, 'materia_prima/add_materia.html')
 
+def vista_inventario(request):
+    return render(request, 'inventario/inventario.html')
+
 def Inventario(request):
     materias = Materiaprima.objects.all()
     return render(request, 'inventario/inventario.html', {'materias': materias})  # Ruta al HTML de Inventario

@@ -12,11 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='MateriaPrima',
+            name='Materiaprima',
             fields=[
                 ('idMateriaPrima', models.AutoField(primary_key=True, serialize=False)),
                 ('nombreMateriaPrima', models.CharField(max_length=45)),
                 ('costo', models.IntegerField()),
+                ('proveedor', models.IntegerField()),
                 ('cantidad', models.IntegerField()),
                 ('unidadMedida', models.CharField(max_length=10)),
                 ('categoria', models.CharField(max_length=45)),
@@ -26,19 +27,6 @@ class Migration(migrations.Migration):
             ],
             options={
                 'db_table': 'MateriaPrima',
-                'managed': False,
-            },
-        ),
-        migrations.CreateModel(
-            name='Proveedor',
-            fields=[
-                ('idProvedor', models.AutoField(primary_key=True, serialize=False)),
-                ('nombreProvedor', models.CharField(max_length=45)),
-                ('direccion', models.CharField(max_length=45)),
-                ('telefono', models.CharField(max_length=45)),
-            ],
-            options={
-                'db_table': 'Proveedores',
                 'managed': False,
             },
         ),

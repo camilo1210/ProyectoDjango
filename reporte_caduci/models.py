@@ -14,4 +14,4 @@ class Materiaprima(models.Model):
 
     class Meta:
         managed = False  # No se gestiona por Django
-        db_table = 'materiaprima'
+        db_table = 'MateriaPrima'

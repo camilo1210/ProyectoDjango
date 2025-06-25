@@ -60,7 +60,7 @@ class Proveedor(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'Proveedor'
+        db_table = 'Proveedores'
 
 
 class Proveedorauditoria(models.Model):
@@ -222,4 +222,4 @@ class LoginLoginusuario(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'login_loginusuario'
+        db_table = 'Login_LoginUsuario'

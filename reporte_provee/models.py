@@ -8,7 +8,7 @@ class Proveedor(models.Model):
     telefono = models.CharField(max_length=45)
 
     class Meta:
-        db_table = 'proveedor'  # <- Esto le dice a Django que use esta tabla exacta
+        db_table = 'Proveedores'  # <- Esto le dice a Django que use esta tabla exacta
         managed = False
 class MateriaPrima(models.Model):
     idMateriaPrima = models.AutoField(primary_key=True)
@@ -23,7 +23,7 @@ class MateriaPrima(models.Model):
     fechaVencimiento = models.DateTimeField()
 
     class Meta:
-        db_table = 'materiaprima'
+        db_table = 'MateriaPrima'
         managed = False  # Ya existe en la base de datos
 
     def __str__(self):

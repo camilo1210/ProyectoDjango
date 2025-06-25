@@ -78,7 +78,7 @@ class Proveedores(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'Proveedor'
+        db_table = 'Proveedores'
 
 
 class ProveedoresAuditoria(models.Model):
@@ -254,7 +254,7 @@ class LoginUsuario(models.Model):
     nombre = models.CharField(max_length=45, null=True, blank=True)
 
     class Meta:
-        db_table = 'login_loginusuario'
+        db_table = 'login_loginUsuario'
 
 
 
