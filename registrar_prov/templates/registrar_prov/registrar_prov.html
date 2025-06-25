@@ -139,7 +139,7 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles">REGISTRAR PROVEEDOR</h1>
+				<h1 class="text-titles">REGISTRAR PROVEEDOR</h1>
 			</div>
 		</div>
 		<!--ESTA ES LA PARTE DEL CUADRO DE-->
@@ -149,22 +149,25 @@
 				<input type="text" id="nombreProvedor" name="nombreProvedor">
 			</div>
 
-			<div class="inventario-block">
-				<label for="costo">DIRECCION</label>
-				<input type="text" id="direccion" name="direccion">
-			</div>
-			
-		</div>
-		<div class="externo-button">
-			<form method="POST">
-				{% csrf_token %}
-				{{ form.as_p }}
-				<button type="submit">Guardar proveedor</button>
-			</form>
-		</div>		
-		<div class="externo-button">
-			<button class="btn-registrar">REGISTRAR</button>
-		</div>
+
+    <div class="inventario-block">
+        <label for="costo">DIRECCION</label>
+        <input type="text" id="direccion" name="direccion">
+    </div>
+</div>
+
+<div class="externo-button">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar proveedor</button>
+    </form>
+</div>		
+
+<div class="externo-button">
+    <button class="btn-registrar">REGISTRAR</button>
+</div>
+
 		<div class="container-fluid">
 			<div class="page-header">
 			<h1 class="text-titles">NOVEDADES Y NOTIFICACIONES <small>Linea de suministros</small><h1>

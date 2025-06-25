@@ -18,6 +18,7 @@ def agregar_materia(request):
 
         try:
             proveedor = Proveedores.objects.get(pk=int(proveedor_id))  # Obtener instancia
+            print(Proveedores.objects.all())
 
             materia = MateriaPrima(
                 nombreMateriaPrima=nombre,
@@ -39,7 +40,10 @@ def agregar_materia(request):
         except Exception as e:
             print("❌ Error al guardar:", e)
 
-    return render(request, 'materia_prima/add_materia.html')
+    return render(request, 'materia_prima/add_materia.html',{'proveedores': Proveedores.objects.all()})
+
+
+
 
 
 def vista_add_materia(request):
