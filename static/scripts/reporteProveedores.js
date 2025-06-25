@@ -19,18 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       data.forEach((proveedor) => {
         const card = document.createElement("div");
-        card.classList.add("card-proveedor");
-
         card.innerHTML = `
-        <h2 class="titulo-proveedor">Proveedor: ${proveedor.nombre}</h2>
-        <p><strong>ID:</strong> ${proveedor.id}</p>
-        <p><strong>Dirección:</strong> ${proveedor.direccion}</p>
-        <p><strong>Teléfono:</strong> ${proveedor.telefono}</p>
-        <div id="materias-${proveedor.id}" class="contenedor-materias"></div>
-        <hr>
-      `;
+    <h2>Proveedor: ${proveedor.nombre}</h2>
+    <p><strong>ID:</strong> ${proveedor.id}</p>
+    <p><strong>Dirección:</strong> ${proveedor.direccion}</p>
+    <p><strong>Teléfono:</strong> ${proveedor.telefono}</p>
+    <div id="materias-${proveedor.id}"></div> <!-- 💡 ESTE DIV SE CREA AQUÍ -->
+    <hr>
+  `;
         container.appendChild(card);
-
         fetch(`/reporte_provee/api/proveedor/${proveedor.id}/materias/`)
           .then((response) => response.json())
           .then((materias) => {
@@ -39,37 +36,37 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             if (materias.length === 0) {
               materiasDiv.innerHTML =
-                "<p class='sin-materias'>No hay materias primas registradas para este proveedor.</p>";
+                "<p>No hay materias primas registradas para este proveedor.</p>";
             } else {
               let tablaHTML = `
-              <table class="tabla-materias">
-                <thead>
-                  <tr>
-                    <th>Nombre</th>
-                    <th>Costo</th>
-                    <th>Cantidad</th>
-                    <th>Unidad</th>
-                    <th>Categoría</th>
-                    <th>Marca</th>
-                    <th>Fecha Llegada</th>
-                    <th>Fecha Vencimiento</th>
-                  </tr>
-                </thead>
-                <tbody>
-            `;
+                <table border="1" style="width: 100%; margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Costo</th>
+                      <th>Cantidad</th>
+                      <th>Unidad</th>
+                      <th>Categoría</th>
+                      <th>Marca</th>
+                      <th>Fecha Llegada</th>
+                      <th>Fecha Vencimiento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+              `;
               materias.forEach((m) => {
                 tablaHTML += `
-                <tr>
-                  <td>${m.nombre}</td>
-                  <td>${m.costo}</td>
-                  <td>${m.cantidad}</td>
-                  <td>${m.unidadMedida}</td>
-                  <td>${m.categoria}</td>
-                  <td>${m.marca}</td>
-                  <td>${m.fechaLlegada}</td>
-                  <td>${m.fechaVencimiento}</td>
-                </tr>
-              `;
+                  <tr>
+                    <td>${m.nombre}</td>
+                    <td>${m.costo}</td>
+                    <td>${m.cantidad}</td>
+                    <td>${m.unidadMedida}</td>
+                    <td>${m.categoria}</td>
+                    <td>${m.marca}</td>
+                    <td>${m.fechaLlegada}</td>
+                    <td>${m.fechaVencimiento}</td>
+                  </tr>
+                `;
               });
               tablaHTML += "</tbody></table>";
               materiasDiv.innerHTML = tablaHTML;
@@ -81,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
               `materias-${proveedor.id}`
             );
             materiasDiv.innerHTML =
-              '<p class="error-carga">Error cargando materias primas.</p>';
+              '<p style="color: red;">Error cargando materias primas.</p>';
           });
       });
     })
