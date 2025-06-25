@@ -27,7 +27,7 @@
 					<li>
 						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
-						 </a>
+						</a>
 					</li>
 					<li>
 						<a href="#!" class="btn-exit-system">
@@ -121,7 +121,33 @@
 				<li>
 					<a href="#!" class="btn-Notifications-area">
 						<i class="zmdi zmdi-notifications-none"></i>
-						<span class="badge">5</span>
+
+		<div class="inventario">
+        <div class="inventario-block">
+            <label for="id_nombreProvedor">NOMBRE DEL PROVEEDOR</label>
+            <input type="text" id="nombreProvedor" name="nombreProvedor" required>
+        </div>
+
+        <div class="inventario-block">
+            <label for="id_direccion">DIRECCIÓN</label>
+            <input type="text" id="direccion" name="direccion" required>
+        </div>
+
+        <div class="inventario-block">
+            <label for="id_telefono">TELÉFONO</label>
+            <input type="text" id="telefono" name="telefono" required>
+        </div>
+			
+		</div>
+		<div class="externo-button">
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+        <button type="submit">Guardar proveedor</button>
+    </form>
+</div>
+			
+<span class="badge">5</span>
 					</a>
 				</li>
 				<li>
@@ -139,31 +165,44 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-			  <h1 class="text-titles">REGISTRAR PROVEEDOR</h1>
-			</div>
-		</div>
-		<!--ESTA ES LA PARTE DEL CUADRO DE-->
-		<div class="inventario">
-			<div class="inventario-block">
-				<label for="materia-prima">NOMBRE DEL PROVEEDOR</label>
-				<input type="text" id="nombreProvedor" name="nombreProvedor">
-			</div>
 
-			<div class="inventario-block">
-				<label for="costo">DIRECCION</label>
-				<input type="text" id="direccion" name="direccion">
-			</div>
-			
-		</div>
+				<h1 class="text-titles">REGISTRAR PROVEEDOR</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: green;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST" action="{% url 'registrar_prov:registrado' %}">
+        {% csrf_token %}
+        <div class="inventario">
+            <div class="inventario-block">
+                <label for="id_nombreProvedor">NOMBRE DEL PROVEEDOR</label>
+                {{ form.nombreProvedor }}
+            </div>
+
+            <div class="inventario-block">
+                <label for="id_direccion">DIRECCIÓN</label>
+                {{ form.direccion }}
+            </div>
+
+            <div class="inventario-block">
+                <label for="id_telefono">TELÉFONO</label>
+                {{ form.telefono }}
+            </div>
+        </div>
+
+        <div class="externo-button">
+            <button type="submit" class="btn-registrar">GUARDAR</button>
+        </div>
+    </form>
+</div>
+
+
+		
 		<div class="externo-button">
-			<form method="POST">
-				{% csrf_token %}
-				{{ form.as_p }}
-				<button type="submit">Guardar proveedor</button>
-			</form>
-		</div>		
-		<div class="externo-button">
-			<button class="btn-registrar">REGISTRAR</button>
+			<button class="btn-registrar">REGISTRAR PROVEEDOR</button>
 		</div>
 		<div class="container-fluid">
 			<div class="page-header">
@@ -223,11 +262,8 @@
                     </div>
                 </div>   
             </section>
-
-
 		</div>
 	</section>
-
 	<!-- Notifications area -->
 	<section class="full-box Notifications-area">
 		<div class="full-box Notifications-bg btn-Notifications-area"></div>
@@ -294,7 +330,6 @@
 
 		</div>
 	</section>
-
 	<!-- Dialog help -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="Dialog-Help">
 		<div class="modal-dialog" role="document">
@@ -332,6 +367,5 @@
 	<script>
 		$.material.init();
 	</script>
-	{% load static %}
 </body>
 </html>

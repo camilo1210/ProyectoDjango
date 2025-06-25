@@ -15,6 +15,7 @@ from django.db import reset_queries, connection
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.timezone import make_aware
 from datetime import datetime
+
 def listado_inventario(request):
     return render(request, 'inventario/inventario.html')
 

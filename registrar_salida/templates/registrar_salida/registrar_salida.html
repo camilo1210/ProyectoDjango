@@ -98,7 +98,7 @@
 							<a href="{% url 'perfil' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
 						</li>
 						<li>
-							<a href="{% url 'adminUsuarios' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
+							<a href="{% url 'admin' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
 						</li>
 					</ul>
 				</li>
@@ -142,15 +142,126 @@
 			<div class="page-header">
 			  <h1 class="text-titles"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i> REGISTRAR SALIDA <small>Registro y existencias</small></h1>
 			</div>
-			<div id="fecha-actual" class="fecha-titulo"></div>
-
-			<div id="contenedor-productos" class="contenedor-productos"></div>
-			<div class="guardar-container">
-  <button id="guardar-salida" class="btn-guardar">Guardar salida</button>
-</div>
-
 		</div>
-
+		<div class="container-fluid"> 
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+					  	<li class="active"><a href="#list" data-toggle="tab">INVENTARIO</a></li>
+					</ul>
+					<a href="#!" class="icono-filtro" id="menu-filtro">
+						<i class="zmdi zmdi-search-in-file zmdi-hc-fw"></i>
+					</a>
+					
+					<!-- El filtro que se mostrará al hacer clic en el ícono -->
+					<div class="filtro">
+						<form>
+							<div class="contenido-filtro">
+								<p>Filtros</p> 
+								<a href="#!">Limpiar filtros</a>
+							</div>
+							<div>
+								<div class="contenido-filtro-filtrado">
+									<button> Especias <i class="zmdi zmdi-close"></i></button> 
+									<button> Lacteos <i class="zmdi zmdi-close"></i></button>
+									<button> Azucar <i class="zmdi zmdi-close"></i></button>
+								</div>
+							</div>
+							<hr class="linea-filtro">
+							<div class="contenido-filtro-categorias">
+								<h3>Categorias</h3>
+								<input type="checkbox" name="opcion1" value="valor1">
+								Lacteos
+								<input type="checkbox" name="opcion1" value="valor1">
+								Encurtidos
+								<input type="checkbox" name="opcion1" value="valor1">
+								Vegetales
+							</div>
+							<hr class="linea-filtro">
+							<div class="contenido-filtro-categorias">
+								<h3>Marca</h3>
+								<input type="checkbox" name="opcion1" value="valor1">
+								Coca-cola
+								<input type="checkbox" name="opcion2" value="valor2">
+								Pepsi
+								<input type="checkbox" name="opcion3" value="valor3">
+								Colanta
+							</div>
+							<hr class="linea-filtro">
+							<div class="contenido-filtro-categorias">
+								<h3> AGREGAR FILTRO <i class="zmdi zmdi-close"></i> <i class="zmdi zmdi-check"></i></h3> 
+							</div>
+						</form>
+					</div>
+					<div id="myTabContent" class="tab-content">
+					  	<div class="tab-pane fade active in" id="list">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">Nombre</th>
+											<th class="text-center">Costo</th>
+											<th class="text-center">Proveedor</th>
+											<th class="text-center">Cantidad</th>
+											<th class="text-center">Unidad de medida</th>
+											<th class="text-center">Marca</th>
+											<th class="text-center">Fecha llegada</th>
+											<th class="text-center">Fecha Vencimiento</th>
+											<th class="text-center">Update</th>
+											<th class="text-center">Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										{% for materia in materias %}
+										<tr>
+											<td>{{ forloop.counter }}</td>
+											<td>{{ materia.nombremateriaprima }}</td>
+											<td>{{ materia.costo }}</td>
+											<td>{{ materia.proveedor }}</td>
+											<td>{{ materia.cantidad }}</td>
+											<td>{{ materia.unidadmedida }}</td>
+											<td>{{ materia.marca }}</td>
+											<td>{{ materia.fechallegada|date:"d/m/Y" }}</td>
+											<td>{{ materia.fechavencimiento|date:"d/m/Y" }}</td>
+											<td>
+												<a href="#!"
+													class="btn btn-success btn-raised btn-xs">
+													<i class="zmdi zmdi-refresh"></i>
+												</a>
+											</td>
+											<td>
+												<a href="#!"
+													class="btn btn-danger btn-raised btn-xs">
+													<i class="zmdi zmdi-delete"></i>
+												</a>
+											</td>
+										</tr>
+										{% empty %}
+										<tr>
+											<td colspan="11">No hay materias primas registradas.</td>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+								  	<li class="disabled"><a href="#!">«</a></li>
+								  	<li class="active"><a href="#!">1</a></li>
+								  	<li><a href="#!">2</a></li>
+								  	<li><a href="#!">3</a></li>
+								  	<li><a href="#!">4</a></li>
+								  	<li><a href="#!">5</a></li>
+								  	<li><a href="#!">»</a></li>
+								</ul>
+								<div class="boton-general">
+									<a href="#!"><button class="btn-registrar-prov">Registrar</button></a>
+								</div>
+							</div>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<!-- Notifications area -->
@@ -254,7 +365,6 @@
 	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 	<script src="{% static 'scripts/main.js' %}"></script>
-	<script src="{% static 'scripts/registrar_salida.js' %}"></script>
 	<script>
 		$.material.init();
 	</script>

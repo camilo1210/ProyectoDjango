@@ -1,16 +1,13 @@
-{% load static %}
+{% load static %}	
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 	<title>Section</title>
 	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	<link rel="icon" href="{% static 'imagenes/icons/logo_navidad.png' %}" type="image/x-icon">
 </head>
-
 <body>
 	<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
@@ -30,7 +27,7 @@
 					<li>
 						<a href="{% url 'configuracion' %}">
 							<i class="zmdi zmdi-settings"></i> <!--ESTE ES UN ICONO-->
-						</a>
+						 </a>
 					</li>
 					<li>
 						<a href="#!" class="btn-exit-system">
@@ -43,77 +40,64 @@
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 				<li>
 					<a href="{% url 'agregar_materia' %}">
-						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA <!--ESTE ES UN ICONO-->
+						<i class="zmdi zmdi-truck zmdi-hc-fw"></i> AGREGAR MATERIA PRIMA  <!--ESTE ES UN ICONO-->
 					</a>
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-storage zmdi-hc-fw"></i> INVENTARIO <i
-							class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-storage zmdi-hc-fw"></i> INVENTARIO <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
 							<a href="#!"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>Inventario</a>
 						</li>
 						<li>
-							<a href="{% url 'registrar_salida' %}"><i
-									class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
+							<a href="{% url 'registrar_salida' %}"><i class="zmdi zmdi-arrow-right zmdi-hc-fw"></i>Registrar salida</a>
 						</li>
 					</ul>
 				</li>
 
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-file-text zmdi-hc-fw"></i> REPORTES <i
-							class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-file-text zmdi-hc-fw"></i> REPORTES <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								ventas</a>
+							<a href="{% url 'reporte_ventas' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de ventas</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								inventario</a>
+							<a href="{% url 'reporte_inven' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de inventario</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								stock</a>
+							<a href="{% url 'reporte_stock' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de stock</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								caducidad</a>
+							<a href="{% url 'reporte_caduci' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de caducidad</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								proveedores</a>
+							<a href="{% url 'reporte_provee' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de proveedores</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								compras</a>
+							<a href="{% url 'reporte_compra' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de compras</a>
 						</li>
 						<li>
-							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de
-								tendencia</a>
+							<a href="{% url 'reporte_tende' %}"><i class="zmdi zmdi-chart zmdi-hc-fw"></i>Reporte de tendencia</a>
 						</li>
 						<li>
-							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar
-								reporte</a>
+							<a href="{% url 'modificar_reportes' %}"><i class="zmdi zmdi-edit zmdi-hc-fw"></i>Modificar reporte</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a href="#!" class="btn-sideBar-SubMenu">
-						<i class="zmdi zmdi-account zmdi-hc-fw"></i> USUARIO <i
-							class="zmdi zmdi-caret-down pull-right"></i>
+						<i class="zmdi zmdi-account zmdi-hc-fw"></i> USUARIO <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
 							<a href="{% url 'perfil' %}"><i class="zmdi zmdi-account-circle zmdi-hc-fw"></i>Perfil</a>
 						</li>
 						<li>
-							<a href="{% url 'adminUsuarios' %}"><i
-									class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
+							<a href="{% url 'admin' %}"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>Administrador de usuario</a>
 						</li>
 					</ul>
 				</li>
@@ -155,16 +139,76 @@
 		<!-- Content page -->
 		<div class="container-fluid">
 			<div class="page-header">
-				<h1 class="text-titles"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> REPORTE
-					<small>Caducidad</small></h1>
+			  <h1 class="text-titles"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Administration <small>Section</small></h1>
+			</div>
+			<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed, dignissimos possimus!</p>
+		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+					  	<li class="active"><a href="#new" data-toggle="tab">New</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div class="tab-pane fade active in" id="new">
+							<div class="table-responsive">
+								<table class="table table-hover text-center">
+									<thead>
+										<tr>
+											<th class="text-center">#</th>
+											<th class="text-center">Name</th>
+											<th class="text-center">Section</th>
+											<th class="text-center">Status</th>
+											<th class="text-center">Year</th>
+											<th class="text-center">Update</th>
+											<th class="text-center">Delete</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>First</td>
+											<td>A</td>
+											<td>Active</td>
+											<td>2017</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>First</td>
+											<td>B</td>
+											<td>Active</td>
+											<td>2017</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Third</td>
+											<td>A</td>
+											<td>Active</td>
+											<td>2017</td>
+											<td><a href="#!" class="btn btn-success btn-raised btn-xs"><i class="zmdi zmdi-refresh"></i></a></td>
+											<td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i class="zmdi zmdi-delete"></i></a></td>
+										</tr>
+									</tbody>
+								</table>
+								<ul class="pagination pagination-sm">
+								  	<li class="disabled"><a href="#!">«</a></li>
+								  	<li class="active"><a href="#!">1</a></li>
+								  	<li><a href="#!">2</a></li>
+								  	<li><a href="#!">3</a></li>
+								  	<li><a href="#!">4</a></li>
+								  	<li><a href="#!">5</a></li>
+								  	<li><a href="#!">»</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div id="contenedor-tablas"></div>
-		<div class="input-container">
-				<label for="user-input">Observaciones:</label>
-				<textarea id="user-input" class="styled-input" placeholder="Ingresa tu texto..."></textarea>
-				<button class="save-button">Guardar</button>
-			</div>
 	</section>
 
 	<!-- Notifications area -->
@@ -175,65 +219,60 @@
 				NOTIFICACIONES <i class="zmdi zmdi-close btn-Notifications-area"></i>
 			</div>
 			<div class="list-group">
-				<div class="list-group-item">
-					<div class="row-action-primary">
-						<img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
-					</div>
-					<div class="row-content">
-						<div class="least-content">5 m</div>
-						<h4 class="list-group-item-heading">Entrada de producto</h4>
-						<p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han
-							sido añadidas correctamente.</p>
-					</div>
-				</div>
-				<div class="list-group-separator"></div>
-				<div class="list-group-item">
-					<div class="row-action-primary">
+			<div class="list-group-item">
+				    <div class="row-action-primary">
+				    <img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
+				    </div>
+				    <div class="row-content">
+				    <div class="least-content">5 m</div>
+				    <h4 class="list-group-item-heading">Entrada de producto</h4>
+				    <p class="list-group-item-text">Nuevo inventario recibido: 50 unidades de Leche alqueria 1L han sido añadidas correctamente.</p>
+				    </div>
+			</div>
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
+				    <div class="row-action-primary">
 						<img src="{%static '/imagenes/img/Asta.jpeg' %}" alt="" class="notificaciones">
-					</div>
-					<div class="row-content">
-						<div class="least-content">15m</div>
-						<h4 class="list-group-item-heading">Salida de productos</h4>
-						<p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido
-							retiradas del inventario.</p>
-					</div>
+				    </div>
+				    <div class="row-content">
+				    <div class="least-content">15m</div>
+				    <h4 class="list-group-item-heading">Salida de productos</h4>
+				    <p class="list-group-item-text">Salida registrada: 30 unidades de Arina de trigo 1kg han sido retiradas del inventario.</p>
 				</div>
-				<div class="list-group-separator"></div>
+			</div>
+			<div class="list-group-separator"></div>
 				<div class="list-group-item">
-					<div class="row-action-primary">
+				    <div class="row-action-primary">
 						<img src="{%static '/imagenes/img/dva.jpeg' %}" alt="" class="notificaciones">
-					</div>
-					<div class="row-content">
-						<div class="least-content">25m</div>
-						<h4 class="list-group-item-heading">Bajo stock</h4>
-						<p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30
-							Realice un pedido pronto</p>
-					</div>
+				    </div>
+				    <div class="row-content">
+				    <div class="least-content">25m</div>
+				    <h4 class="list-group-item-heading">Bajo stock</h4>
+				    <p class="list-group-item-text">Alerta de bajo stock: Solo quedan 5 unidades de huevo kikes x30 Realice un pedido pronto</p>
+				    </div>
 				</div>
-				<div class="list-group-separator"></div>
-				<div class="list-group-item">
-					<div class="row-action-primary">
-						<img src="{%static '/imagenes/img/andres.jpg' %}" alt="" class="notificaciones">
-					</div>
-					<div class="row-content">
-						<div class="least-content">5h</div>
-						<h4 class="list-group-item-heading">Actualización de inventario</h4>
-						<p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido
-							ajustada correctamente.</p>
-					</div>
-				</div>
-				<div class="list-group-separator"></div>
-				<div class="list-group-item">
-					<div class="row-action-primary">
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
+				    <div class="row-action-primary">
+						<img src="{%static '/imagenes/img/andres.jpg' %}"alt="" class="notificaciones">
+				    </div>
+				    <div class="row-content">
+				    <div class="least-content">5h</div>
+				    <h4 class="list-group-item-heading">Actualización de inventario</h4>
+				    <p class="list-group-item-text">Inventario actualizado: La cantidad de Coca-cola 1L ha sido ajustada correctamente.</p>
+				    </div>
+			</div>
+			<div class="list-group-separator"></div>
+			<div class="list-group-item">
+				    <div class="row-action-primary">
 						<i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>
-					</div>
-					<div class="row-content">
-						<div class="least-content">7h</div>
-						<h4 class="list-group-item-heading">Caducidad de productos</h4>
-						<p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca
-							de su fecha de expiración.</p>
-					</div>
-				</div>
+				    </div>
+				    <div class="row-content">
+				    <div class="least-content">7h</div>
+				    <h4 class="list-group-item-heading">Caducidad de productos</h4>
+				    <p class="list-group-item-text">Alerta de caducidad: El producto Crema de leche 500gr está cerca de su fecha de expiración.</p>
+				    </div>
+			</div>
 			</div>
 
 		</div>
@@ -242,16 +281,14 @@
 	<!-- Dialog help -->
 	<div class="modal fade" tabindex="-1" role="dialog" id="Dialog-Help">
 		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-							aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
-				</div>
-				<div class="modal-body">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">¿NECESITAS AYUDA?</h4>
+					</div>
+					<div class="modal-body">
 					<p>
-						Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de
-						"Pan y Arte".
+						Bienvenido/a a Bread Tracker, el sistema de inventario diseñado para facilitar la gestión de "Pan y Arte". 
 						Aquí encontrarás información para resolver tus dudas rápidamente.
 					</p>
 					<dl>
@@ -259,12 +296,11 @@
 						<dd>andres.camilo.fernandez@correounivalle.edu.co</dd>
 						<dt>Teléfono:</dt>
 						<dd>662 482918</dd>
-					</dl>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i
-							class="zmdi zmdi-thumb-up"></i> Ok</button>
-				</div>
+						</dl>
+					</div>
+			<div class="modal-footer">
+						<button type="button" class="btn btn-primary btn-raised" data-dismiss="modal"><i class="zmdi zmdi-thumb-up"></i> Ok</button>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -276,11 +312,9 @@
 	<script src="{% static 'scripts/sweetalert2.min.js' %}"></script>
 	<script src="{% static 'scripts/jquery.mCustomScrollbar.concat.min.js' %}"></script>
 	<script src="{% static 'scripts/main.js' %}"></script>
-	<script src="{% static 'scripts/reporte_caduci.js'%}"></script>
 	<script>
 		$.material.init();
 	</script>
 	{% load static %}
 </body>
-
 </html>
