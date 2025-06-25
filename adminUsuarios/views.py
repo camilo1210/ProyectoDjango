@@ -13,8 +13,6 @@ import json
 def admin(request):
     return render(request, 'adminUsuarios/admin_user.html')  # Ruta al HTML de adminUsuarios
 
-def home(request):
-    return render(request, 'home/home.html')  # Ruta al HTML de home
 def get_usernames(request):
     usuarios = User.objects.all()
     data = [{"name": user.username} for user in usuarios]
