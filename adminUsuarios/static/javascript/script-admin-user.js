@@ -149,7 +149,7 @@ confirmEditBtn.addEventListener("click", () => {
     });
 });
 // 🔗 Aquí es donde pedimos los datos al backend
-fetch("/api/usernames/")
+fetch("/adminUsuarios/api/usernames/")
   .then((response) => response.json())
   .then((data) => {
     renderUsers(data); // 👈 Aquí se pasa el array con { name: ... }

@@ -7,3 +7,4 @@ urlpatterns = [
     path('', views.registrar_prov, name='registrar_prov'),
     path('registrado/', views.registrar_proveedor, name='registrado'),
 ]
+
